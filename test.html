@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatto - Human Storytelling in an AI World</title>
+    <meta name="description" content="Ethical photography for impact organizations. Real stories, verified consent, fair compensation.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4A5D73;
+            --secondary: #FEFCF8;
+            --accent: #D4A574;
+            --text: #1A2332;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--secondary) 0%, #F0EDE7 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .tagline {
+            color: var(--text-light);
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .main {
+            padding: 40px 0 80px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        .hero-title .highlight {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Problem/Solution */
+        .problem-solution {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 4px 24px rgba(26, 35, 50, 0.08);
+        }
+
+        .problem-solution h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .problem-solution p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin: 40px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Email Signup */
+        .signup-section {
+            background: var(--primary);
+            color: white;
+            border-radius: 16px;
+            padding: 48px 40px;
+            margin: 40px 0;
+        }
+
+        .signup-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .signup-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 16px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text);
+        }
+
+        .email-input::placeholder {
+            color: var(--text-light);
+        }
+
+        .signup-btn {
+            padding: 16px 24px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .signup-btn:hover {
+            background: #B8956A;
+            transform: translateY(-2px);
+        }
+
+        .signup-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+            border: 1px solid var(--error);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(26, 35, 50, 0.06);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .feature h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .contact-info {
+            margin-bottom: 16px;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .signup-form {
+                flex-direction: column;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-solution {
+                padding: 24px;
+            }
+
+            .signup-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A5D73;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3A4D63;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C8956A;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.6" />
+                            <stop offset="70%" style="stop-color:#4A5D73;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#4A5D73;stop-opacity:0.7" />
+                        </radialGradient>
+                        <filter id="softShadow">
+                            <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.1"/>
+                        </filter>
+                    </defs>
+                    <g transform="translate(5, 5)">
+                        <circle cx="15" cy="12.5" r="12" fill="none" stroke="url(#primaryGradient)" stroke-width="1.2" opacity="0.5"/>
+                        <circle cx="15" cy="12.5" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.6"/>
+                        <circle cx="15" cy="12.5" r="5.5" fill="url(#irisGradient)" filter="url(#softShadow)"/>
+                        <circle cx="15" cy="12.5" r="2.2" fill="url(#primaryGradient)"/>
+                        <ellipse cx="16.2" cy="11.5" rx="0.7" ry="1" fill="#FEFCF8" opacity="0.7" transform="rotate(-20 16.2 11.5)"/>
+                        <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
+                    </g>
+                </svg>
+                <div class="logo-text">Scatto</div>
+            </div>
+            <div class="tagline">Stories That Matter</div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <h1 class="hero-title"><span class="human-highlight">Human storytelling</span> in an <span class="ai-context">AI world</span></h1>
+            <p class="hero-subtitle">AI transforms how we work—use it to streamline operations while keeping your impact stories authentically human. Real photographers, verified consent, meaningful narratives that inspire action and drive engagement.</p>
+
+            <!-- Problem/Solution -->
+            <div class="problem-solution">
+                <h3>The Problem</h3>
+                <p>Impact organizations struggle with generic stock photos that don't connect with audiences. AI-generated images are making visual storytelling even more soulless. Your mission deserves authentic representation.</p>
+                
+                <h3 style="margin-top: 24px;">The Solution</h3>
+                <p>Scatto provides ethically-sourced photography from local photographers worldwide. Every image includes verified consent, cultural sensitivity review, and meaningful context for your impact narrative.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">Authentic</div>
+                    <div class="stat-label">vs Generic Stock</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Global</div>
+                    <div class="stat-label">Network</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Ethical Standards</div>
+                </div>
+            </div>
+
+            <!-- Email Signup -->
+            <div class="signup-section">
+                <h2 class="signup-title">Be among the first to access Scatto</h2>
+                <p class="signup-subtitle">Join our growing community of impact leaders. Get notified when we launch and receive founding member benefits.</p>
+                
+                <form class="signup-form" id="emailForm">
+                    <input 
+                        type="email" 
+                        class="email-input" 
+                        placeholder="your@organization.org" 
+                        required
+                        id="emailInput"
+                    >
+                    <button type="submit" class="signup-btn" id="submitBtn">
+                        Get Early Access
+                    </button>
+                </form>
+                
+                <div id="formMessage" class="form-message" style="display: none;"></div>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4>Verified Consent</h4>
+                    <p>Every photo includes documented consent from subjects and communities.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h4>Fair Compensation</h4>
+                    <p>Photographers receive 60% of licensing fees, supporting local economies.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l3.09 6.26L22 9l-5 4.74 1.18 6.26L12 17.77l-6.18 3.23L7 14.74 2 9l6.91-1.74L12 2z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h4>Impact-Focused</h4>
+                    <p>Curated specifically for NGOs, foundations, and social enterprises.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 17H7v-7h2m0 0V8.5C9 7.12 10.12 6 11.5 6S14 7.12 14 8.5V10m-5 0h5m0 0V8.5a3.5 3.5 0 117 0V10m0 0h2v7h-2m-7 4h.01M12 21h.01" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4>ROI Tracking</h4>
+                    <p>Analytics showing how authentic imagery improves engagement and donations.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="contact-info">
+                Questions? Email us at <a href="mailto:hello@scatto.photos">hello@scatto.photos</a>
+            </div>
+            <div>&copy; 2024 Scatto. Human storytelling for lasting impact.</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = document.getElementById('emailInput');
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            const email = emailInput.value.trim();
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Disable form
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Joining waitlist...';
+            
+            // Simulate API call (replace with actual endpoint)
+            setTimeout(() => {
+                // For now, just show success message
+                // In production, integrate with your email service (Mailchimp, ConvertKit, etc.)
+                showMessage('🎉 Welcome to the Scatto waitlist! We\'ll be in touch soon with early access.', 'success');
+                emailInput.value = '';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Early Access';
+                
+                // Optional: Track signup event
+                console.log('Email signup:', email);
+                
+                // You can integrate with email services here:
+                // Mailchimp, ConvertKit, EmailOctopus, etc.
+            }, 1500);
+        });
+        
+        function showMessage(text, type) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = text;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>

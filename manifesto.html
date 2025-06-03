@@ -1,302 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Scatto Manifesto | Scatto Photos</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-```
-    :root {
-        --primary: #4A5D73;
-        --secondary: #FEFCF8;
-        --accent: #D4A574;
-        --text: #1A2332;
-        --text-light: #64748B;
-        --border: #E2E8F0;
-    }
-
-    body {
-        font-family: 'Inter', sans-serif;
-        line-height: 1.6;
-        color: var(--text);
-        background: var(--secondary);
-    }
-
-    .container {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 60px 20px;
-    }
-
-    .back-link {
-        color: var(--text-light);
-        text-decoration: none;
-        font-size: 14px;
-        margin-bottom: 40px;
-        display: inline-block;
-        transition: color 0.3s;
-    }
-
-    .back-link:hover {
-        color: var(--primary);
-    }
-
-    h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 30px;
-        color: var(--primary);
-        text-align: center;
-    }
-
-    .tagline {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 40px;
-        text-align: center;
-        color: var(--accent);
-    }
-
-    .manifesto-text {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        margin-bottom: 40px;
-    }
-
-    .manifesto-text p {
-        margin-bottom: 30px;
-    }
-
-    .beliefs {
-        margin: 40px 0;
-    }
-
-    .beliefs h3 {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-        color: var(--primary);
-    }
-
-    .beliefs ul {
-        list-style: none;
-        margin-left: 0;
-    }
-
-    .beliefs li {
-        margin-bottom: 15px;
-        padding-left: 25px;
-        position: relative;
-        font-size: 1.1rem;
-    }
-
-    .beliefs li:before {
-        content: "◆";
-        color: var(--accent);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-        font-size: 0.8em;
-        top: 0.3em;
-    }
-
-    .commitment {
-        font-size: 1.1rem;
-        margin: 40px 0;
-    }
-
-    .commitment h3 {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-        color: var(--primary);
-    }
-
-    .commitment ul {
-        list-style: none;
-        margin-left: 0;
-    }
-
-    .commitment li {
-        margin-bottom: 15px;
-        padding-left: 25px;
-        position: relative;
-    }
-
-    .commitment li:before {
-        content: "◆";
-        color: var(--accent);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-        font-size: 0.8em;
-        top: 0.3em;
-    }
-
-    .closing {
-        font-size: 1.3rem;
-        font-weight: 600;
-        text-align: center;
-        margin: 50px 0;
-        color: var(--primary);
-    }
-
-    .cta {
-        text-align: center;
-        margin-top: 60px;
-        padding-top: 40px;
-        border-top: 1px solid var(--border);
-    }
-
-    .cta h3 {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
-        color: var(--primary);
-        font-weight: 600;
-    }
-
-    .cta p {
-        color: var(--text-light);
-        margin-bottom: 30px;
-    }
-
-    .email-signup {
-        display: inline-flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .email-signup input {
-        padding: 12px 16px;
-        border: 2px solid var(--border);
-        border-radius: 8px;
-        font-size: 16px;
-        width: 250px;
-        font-family: 'Inter', sans-serif;
-    }
-
-    .email-signup input:focus {
-        outline: none;
-        border-color: var(--primary);
-    }
-
-    .email-signup button {
-        padding: 12px 24px;
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s;
-    }
-
-    .email-signup button:hover {
-        background: #3A4D63;
-        transform: translateY(-2px);
-    }
-
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2.2rem;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scatto Manifesto | Scatto Photos</title>
+    <meta name="description" content="Real work deserves real photos. Our manifesto for ethical photography in the impact sector.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .tagline {
-            font-size: 1.2rem;
+        :root {
+            --primary: #4A5D73;
+            --secondary: #FEFCF8;
+            --accent: #D4A574;
+            --text: #1A2332;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(254, 252, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .tagline-nav {
+            position: absolute;
+            left: 85px;
+            bottom: -6px;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3A4D63;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 24px 100px;
+        }
+
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .manifesto-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .manifesto-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .manifesto-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+
+        .manifesto-intro {
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .manifesto-content {
+            margin-bottom: 80px;
         }
 
         .manifesto-text {
-            font-size: 1.1rem;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 60px;
         }
 
-        .container {
-            padding: 40px 20px;
+        .manifesto-text p {
+            margin-bottom: 32px;
+        }
+
+        .beliefs, .commitment {
+            background: linear-gradient(135deg, #FEFCF8 0%, rgba(212, 165, 116, 0.03) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+        }
+
+        .beliefs h3, .commitment h3 {
+            font-size: 24px;
+            margin-bottom: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .beliefs ul, .commitment ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .beliefs li, .commitment li {
+            margin-bottom: 20px;
+            padding-left: 32px;
+            position: relative;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .beliefs li:before, .commitment li:before {
+            content: "◆";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+            top: 2px;
+        }
+
+        .closing {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            margin: 80px 0;
+            color: var(--primary);
+            line-height: 1.4;
+            padding: 40px;
+            background: #F5E6D3;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 40px;
+            background: var(--primary);
+            border-radius: 16px;
+            color: white;
+        }
+
+        .cta h3 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .email-signup {
-            flex-direction: column;
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            justify-content: center;
             align-items: center;
         }
 
         .email-signup input {
-            width: 100%;
-            max-width: 300px;
-            margin-bottom: 10px;
+            padding: 16px 20px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 280px;
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: var(--text);
         }
-    }
-</style>
 
-```
+        .email-signup input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
 
+        .email-signup button {
+            padding: 16px 32px;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .email-signup button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-note {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: white;
+            padding: 60px 0 32px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #374151;
+            opacity: 0.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .manifesto-title {
+                font-size: 42px;
+            }
+
+            .manifesto-subtitle {
+                font-size: 20px;
+            }
+
+            .manifesto-intro {
+                font-size: 18px;
+            }
+
+            .manifesto-text {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 120px 20px 80px;
+            }
+
+            .beliefs, .commitment {
+                padding: 30px 24px;
+            }
+
+            .email-signup {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .email-signup input {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 12px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta {
+                padding: 40px 24px;
+            }
+
+            .closing {
+                font-size: 24px;
+                padding: 30px 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<a href="/" class="back-link">← Back to Scatto Photos</a>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A5D73;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3A4D63;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C8956A;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.6" />
+                            <stop offset="70%" style="stop-color:#4A5D73;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#4A5D73;stop-opacity:0.7" />
+                        </radialGradient>
+                    </defs>
+                    <g transform="translate(5, 5)">
+                        <circle cx="15" cy="12.5" r="12" fill="none" stroke="url(#primaryGradient)" stroke-width="1.2" opacity="0.5"/>
+                        <circle cx="15" cy="12.5" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.6"/>
+                        <circle cx="15" cy="12.5" r="5.5" fill="url(#irisGradient)"/>
+                        <circle cx="15" cy="12.5" r="2.2" fill="url(#primaryGradient)"/>
+                        <ellipse cx="16.2" cy="11.5" rx="0.7" ry="1" fill="#FEFCF8" opacity="0.7" transform="rotate(-20 16.2 11.5)"/>
+                        <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
+                    </g>
+                </svg>
+                <div class="logo-text">Scatto</div>
+                <div class="tagline-nav">mindful stories</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#agency">Agency</a></li>
+                <li><a href="#photographers">For Photographers</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-outline">Sign In</a>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
 
-```
-    <h1>The Scatto Manifesto</h1>
+    <!-- Main Content -->
+    <div class="container">
+        <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 12H5m0 0l7 7m-7-7l7-7"/>
+            </svg>
+            Back to Scatto Photos
+        </a>
 
-    <div class="tagline">Real work deserves real photos.</div>
+        <div class="manifesto-header">
+            <h1 class="manifesto-title">The Scatto Manifesto</h1>
+            <div class="manifesto-subtitle">Real work deserves real photos.</div>
+            <p class="manifesto-intro">
+                In a world where AI handles operations, we ensure visual storytelling stays human, providing authentic imagery that truly represents the incredible work being done by impact organizations worldwide.
+            </p>
+        </div>
 
-    <div class="manifesto-text">
-        <p>Impact organizations are doing incredible work, but finding authentic, high-quality imagery that truly represents their mission is challenging and often expensive. Many are limited to generic stock photos, low-resolution images, or costly custom shoots that stretch budgets meant for program delivery.</p>
+        <div class="manifesto-content">
+            <div class="manifesto-text">
+                <p>Impact organizations are doing incredible work, but finding authentic, high-quality imagery that truly represents their mission is challenging and often expensive. Many are limited to generic stock photos, low-resolution images, or costly custom shoots that stretch budgets meant for program delivery.</p>
 
-        <p>Quality visual storytelling shouldn't be a luxury—it should be accessible to organizations creating real change. And as AI becomes the default solution for everything, we believe organizations making real impact deserve real storytelling through human eyes.</p>
+                <p>Photography is an art form that deserves fair compensation, yet effective visual storytelling shouldn't be a luxury available only to well-funded organizations. Scatto bridges this gap by creating a sustainable model where photographers are paid fairly for their craft while keeping authentic imagery accessible to organizations of all sizes, from grassroots nonprofits to global foundations and mission-driven companies.</p>
 
-        <p>The eyes through which you tell your story determine how the world sees your impact. Authentic visuals don't just look better—they drive more donations, attract better partnerships, and build the trust that turns viewers into supporters.</p>
+                <p>Quality visual storytelling should be accessible to every organization creating real change. As AI becomes the default solution for everything, we believe organizations making real impact deserve real storytelling through human eyes, captured by artists who understand the communities they photograph.</p>
+
+                <p>The eyes through which you tell your story determine how the world sees your impact. Authentic visuals don't just look better, they drive more donations, attract better partnerships, and build the trust that turns viewers into supporters.</p>
+            </div>
+
+            <div class="beliefs">
+                <h3>We believe:</h3>
+                <ul>
+                    <li>Authentic stories require authentic imagery</li>
+                    <li>Photographers embedded in impact work see what others miss</li>
+                    <li>Communities deserve control over how they're represented</li>
+                    <li>Fair compensation builds sustainable storytelling</li>
+                </ul>
+            </div>
+
+            <div class="commitment">
+                <h3>Our commitment:</h3>
+                <ul>
+                    <li>Only photographers doing real impact work</li>
+                    <li>Community consent, always</li>
+                    <li>Photographer credit and fair revenue sharing</li>
+                    <li>No AI, no exploitation, no generic diversity theater</li>
+                </ul>
+            </div>
+
+            <div class="closing">
+                The impact sector deserves better.<br>
+                So do the communities it serves.
+            </div>
+
+            <div class="cta">
+                <h3>Join the movement</h3>
+                <p>Be part of building a new standard for ethical impact photography.</p>
+
+                <form class="email-signup" netlify>
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit">Join Waitlist</button>
+                </form>
+
+                <p class="cta-note">
+                    For photographers and organizations who believe in authentic storytelling.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="beliefs">
-        <h3>We believe:</h3>
-        <ul>
-            <li>Authentic stories require authentic imagery</li>
-            <li>Photographers embedded in impact work see what others miss</li>
-            <li>Communities deserve control over how they're represented</li>
-            <li>Fair compensation builds sustainable storytelling</li>
-        </ul>
-    </div>
-
-    <div class="commitment">
-        <h3>Our commitment:</h3>
-        <ul>
-            <li>Only photographers doing real impact work</li>
-            <li>Community consent, always</li>
-            <li>Photographer credit and fair revenue sharing</li>
-            <li>No AI, no exploitation, no generic diversity theater</li>
-        </ul>
-    </div>
-
-    <div class="closing">
-        The impact sector deserves better.<br>
-        So do the communities it serves.
-    </div>
-
-    <div class="cta">
-        <h3>Join the movement</h3>
-        <p>Be part of building a new standard for ethical impact photography.</p>
-
-        <form class="email-signup" netlify>
-            <input type="email" name="email" placeholder="Your email address" required>
-            <button type="submit">Join Waitlist</button>
-        </form>
-
-        <p style="font-size: 14px; color: #888;">
-            For photographers and organizations who believe in authentic storytelling.
-        </p>
-    </div>
-</div>
-
-```
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Scatto</h3>
+                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#">Browse Photos</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Agency</h4>
+                <ul>
+                    <li><a href="#">Custom Projects</a></li>
+                    <li><a href="#">Photographer Network</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Get Quote</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">For Photographers</a></li>
+                    <li><a href="#">Ethics Guidelines</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
+        </div>
+    </footer>
 </body>
 </html>
-
-[Ethical standards](https://www.notion.so/Ethical-standards-203f2df662f780abb1aec6d6774db7f6?pvs=21)

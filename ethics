@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethics | Scatto Photos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+```
+    :root {
+        --primary: #4A5D73;
+        --secondary: #FEFCF8;
+        --accent: #D4A574;
+        --text: #1A2332;
+        --text-light: #64748B;
+        --border: #E2E8F0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--secondary);
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    .back-link {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 14px;
+        margin-bottom: 40px;
+        display: inline-block;
+        transition: color 0.3s;
+    }
+
+    .back-link:hover {
+        color: var(--primary);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .intro {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        margin-bottom: 50px;
+        text-align: center;
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .section {
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--primary);
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    ul {
+        list-style: none;
+        margin: 20px 0;
+    }
+
+    li {
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+        font-size: 1.05rem;
+    }
+
+    li:before {
+        content: "◆";
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        font-size: 0.8em;
+        top: 0.3em;
+    }
+
+    .commitment-box {
+        background: linear-gradient(135deg, rgba(74, 93, 115, 0.05) 0%, rgba(212, 165, 116, 0.05) 100%);
+        padding: 30px;
+        border-radius: 12px;
+        border-left: 4px solid var(--accent);
+        margin: 30px 0;
+    }
+
+    .commitment-box p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin: 0;
+        color: var(--primary);
+    }
+
+    .contact {
+        background: rgba(74, 93, 115, 0.8);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .contact h2 {
+        color: white;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+
+    .contact p {
+        opacity: 0.9;
+        margin-bottom: 15px;
+    }
+
+    .contact a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+```
+
+</head>
+<body>
+<div class="container">
+<a href="/" class="back-link">← Back to Scatto Photos</a>
+
+```
+    <h1>Our Ethics</h1>
+
+    <div class="intro">
+        Every photograph tells a story. We make sure it's told with respect.
+    </div>
+
+    <div class="section">
+        <h2>What We Promise</h2>
+        <p>Every image on Scatto comes from photographers who understand that authentic storytelling requires ethical practices. We don't just curate beautiful photos—we curate responsible ones.</p>
+
+        <p><strong style="color: var(--primary);">All photography is created with appropriate consent, community respect, and human dignity at the center.</strong></p>
+    </div>
+
+    <div class="section">
+        <h2>Our Standards</h2>
+        <p>We work with photographers who commit to:</p>
+        <ul>
+            <li>Obtaining proper consent from individuals and communities</li>
+            <li>Building genuine relationships, not extractive practices</li>
+            <li>Representing people with dignity and avoiding harmful stereotypes</li>
+            <li>Being transparent about how images will be used</li>
+            <li>Respecting cultural contexts and local customs</li>
+            <li>Never photographing identifiable minors without guardian consent</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Community First</h2>
+        <p>The communities in our photographs aren't just subjects—they're partners in storytelling. We maintain systems for:</p>
+        <ul>
+            <li>Community feedback and concerns</li>
+            <li>Image removal requests</li>
+            <li>Ongoing photographer accountability</li>
+            <li>Cultural sensitivity review</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Real-World Ethics</h2>
+        <p>We understand that ethical photography looks different in different contexts. A community meeting requires different consent than a public rally. Emergency documentation has different constraints than planned portraits.</p>
+
+        <p>Our approach is principled but practical—always prioritizing human dignity while recognizing the realities of documentary work.</p>
+    </div>
+
+    <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Impact organizations deserve imagery that reflects their values. Communities deserve representation that honors their stories. Photographers deserve to work within ethical frameworks that support meaningful storytelling.</p>
+
+        <p>When you use Scatto, you're not just getting better photos—you're supporting better practices.</p>
+    </div>
+
+    <div class="contact">
+        <h2>Questions or Concerns?</h2>
+        <p>We're committed to transparency and continuous improvement.</p>
+        <p>Reach us at: <a href="<mailto:ethics@scatto.photos>">ethics@scatto.photos</a></p>
+    </div>
+</div>
+
+```
+
+</body>
+</html>

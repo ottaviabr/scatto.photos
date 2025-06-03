@@ -86,7 +86,7 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 48px;
             list-style: none;
         }
 
@@ -94,11 +94,29 @@
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
         }
 
         .nav-cta {
@@ -538,13 +556,10 @@
                 <div class="tagline">mindful stories</div>
             </div>
             <ul class="nav-links">
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="/photos">Browse Photos</a></li>
-                <li><a href="#agency">Agency</a></li>
-                <li><a href="#photographers">For Photographers</a></li>
+                <li><a href="/gallery">Gallery</a></li>
                 <li><a href="/manifesto">Our Manifesto</a></li>
                 <li><a href="/ethics">Our Ethics</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#plans">Plans</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#" class="btn btn-outline">Sign In</a>
@@ -564,7 +579,7 @@
                     Authentic photography designed for impact organizations. Every image respects communities, amplifies your mission, and creates deeper audience connection than generic or artificial imagery.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#gallery" class="btn btn-primary">View Our Photography</a>
+                    <a href="/gallery" class="btn btn-primary">View Our Photography</a>
                     <a href="#" class="btn btn-outline">Book Custom Shoot</a>
                 </div>
             </div>

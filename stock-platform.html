@@ -111,31 +111,6 @@
             gap: 16px;
         }
 
-        .cart-btn {
-            position: relative;
-            padding: 8px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            color: var(--text);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            font-size: 11px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         .btn {
             padding: 10px 20px;
             border-radius: 6px;
@@ -334,6 +309,34 @@
             -o-user-drag: none;
         }
 
+        .photo-card:hover .photo-image img {
+            transform: scale(1.05);
+        }
+
+        .photo-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(26, 35, 50, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .photo-price {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(26, 35, 50, 0.8);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
         .photo-image::after {
             content: 'PREVIEW';
             position: absolute;
@@ -362,34 +365,6 @@
 
         .photo-credit::before {
             content: '© ';
-        }
-
-        .photo-card:hover .photo-image img {
-            transform: scale(1.05);
-        }
-
-        .photo-badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(26, 35, 50, 0.8);
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .photo-price {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(26, 35, 50, 0.8);
-            color: white;
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
         }
 
         .photo-info {
@@ -631,36 +606,6 @@
             flex: 1;
         }
 
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 60px;
-        }
-
-        .page-btn {
-            padding: 8px 12px;
-            border: 1px solid var(--border);
-            background: white;
-            color: var(--text);
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-
-        .page-btn:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .page-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
         /* Interest Form Modal */
         .interest-form {
             background: white;
@@ -749,6 +694,36 @@
         .form-success p {
             color: var(--text-light);
             margin-bottom: 24px;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 60px;
+        }
+
+        .page-btn {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .page-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         /* Footer */
@@ -936,132 +911,34 @@
 
             <!-- Photo Grid -->
             <div class="photo-grid" id="photo-grid">
-                <!-- Sample Photos - these would be dynamically loaded -->
+                <!-- Your Real Photo -->
                 <div class="photo-card" onclick="openModal('photo1')">
                     <div class="photo-image">
-                        <img src="https://images.unsplash.com/photo-1594736797933-d0e3e2c78de2?w=400&h=300&fit=crop" alt="Community Meeting" oncontextmenu="return false" ondragstart="return false">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1" alt="Hazrati Imam Complex, Uzbekistan" oncontextmenu="return false" ondragstart="return false">
                         <div class="photo-badge">EXCLUSIVE</div>
                         <div class="photo-price">$12</div>
-                        <div class="photo-credit">Sarah Kimani</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
                     </div>
                     <div class="photo-info">
-                        <h3 class="photo-title">Village Community Meeting</h3>
+                        <h3 class="photo-title">Hazrati Imam Complex, Uzbekistan</h3>
                         <div class="photo-meta">
-                            <span class="photo-location">Kenya, East Africa</span>
-                            <span class="photo-category">Community</span>
-                        </div>
-                        <p class="photo-description">Local leaders gathering to discuss water access initiatives in rural Kenya.</p>
-                        <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo1')">Add to Cart</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo1')">Preview</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-card" onclick="openModal('photo2')">
-                    <div class="photo-image">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop" alt="Healthcare Worker" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$35</div>
-                    </div>
-                    <div class="photo-info">
-                        <h3 class="photo-title">Mobile Health Clinic</h3>
-                        <div class="photo-meta">
-                            <span class="photo-location">Guatemala, Central America</span>
-                            <span class="photo-category">Healthcare</span>
-                        </div>
-                        <p class="photo-description">Healthcare worker providing medical checkups in remote mountain communities.</p>
-                        <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo2')">Add to Cart</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">Preview</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-card" onclick="openModal('photo3')">
-                    <div class="photo-image">
-                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&h=300&fit=crop" alt="School Children" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$40</div>
-                    </div>
-                    <div class="photo-info">
-                        <h3 class="photo-title">Girls' Education Program</h3>
-                        <div class="photo-meta">
-                            <span class="photo-location">Bangladesh, South Asia</span>
-                            <span class="photo-category">Education</span>
-                        </div>
-                        <p class="photo-description">Young girls participating in literacy programs designed to improve access to education.</p>
-                        <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo3')">Add to Cart</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">Preview</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-card" onclick="openModal('photo4')">
-                    <div class="photo-image">
-                        <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=400&h=300&fit=crop" alt="Solar Installation" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$50</div>
-                    </div>
-                    <div class="photo-info">
-                        <h3 class="photo-title">Solar Energy Project</h3>
-                        <div class="photo-meta">
-                            <span class="photo-location">India, South Asia</span>
-                            <span class="photo-category">Environment</span>
-                        </div>
-                        <p class="photo-description">Community members installing solar panels to provide clean energy access.</p>
-                        <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo4')">Add to Cart</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo4')">Preview</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-card" onclick="openModal('photo5')">
-                    <div class="photo-image">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="Women Farmers" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$38</div>
-                    </div>
-                    <div class="photo-info">
-                        <h3 class="photo-title">Women's Agricultural Cooperative</h3>
-                        <div class="photo-meta">
-                            <span class="photo-location">Peru, South America</span>
-                            <span class="photo-category">Agriculture</span>
-                        </div>
-                        <p class="photo-description">Female farmers working together in sustainable agriculture initiatives.</p>
-                        <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo5')">Add to Cart</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo5')">Preview</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-card" onclick="openModal('photo6')">
-                    <div class="photo-image">
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Cultural Festival" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-badge">NEW</div>
-                        <div class="photo-price">$42</div>
-                    </div>
-                    <div class="photo-info">
-                        <h3 class="photo-title">Traditional Cultural Festival</h3>
-                        <div class="photo-meta">
-                            <span class="photo-location">Morocco, North Africa</span>
+                            <span class="photo-location">Tashkent, Uzbekistan</span>
                             <span class="photo-category">Culture</span>
                         </div>
-                        <p class="photo-description">Community celebrating traditional heritage through music and dance performances.</p>
+                        <p class="photo-description">Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual heart of Uzbekistan's capital.</p>
                         <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo6')">Add to Cart</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo6')">Preview</button>
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo1')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo1')">View Details</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- More photos coming soon... -->
             </div>
 
             <!-- Pagination -->
             <div class="pagination">
-                <a href="#" class="page-btn">Previous</a>
                 <a href="#" class="page-btn active">1</a>
-                <a href="#" class="page-btn">2</a>
-                <a href="#" class="page-btn">3</a>
-                <a href="#" class="page-btn">Next</a>
             </div>
         </section>
     </main>
@@ -1071,230 +948,4 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <div style="position: relative;">
-                <img id="modalImage" class="modal-image" src="" alt="" oncontextmenu="return false" ondragstart="return false">
-                <div class="watermark-overlay">SCATTO PREVIEW</div>
-            </div>
-            <div class="modal-info">
-                <h2 id="modalTitle" class="modal-title"></h2>
-                <div class="modal-meta">
-                    <div class="meta-item">
-                        <h4>Location</h4>
-                        <p id="modalLocation"></p>
-                    </div>
-                    <div class="meta-item">
-                        <h4>Category</h4>
-                        <p id="modalCategory"></p>
-                    </div>
-                    <div class="meta-item">
-                        <h4>Photographer</h4>
-                        <p id="modalPhotographer"></p>
-                    </div>
-                    <div class="meta-item">
-                        <h4>License</h4>
-                        <p id="modalLicense"></p>
-                    </div>
-                </div>
-                <p id="modalDescription" class="modal-description"></p>
-                <div class="license-info">
-                    <h4>🚀 Coming Soon - Get Early Access</h4>
-                    <p>This platform is launching soon! Express your interest to be notified when these ethically-sourced photographs become available for licensing.</p>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-large btn-primary" onclick="showInterestForm()">Join Launch Waitlist</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Interest Form Modal -->
-    <div class="modal" id="interestModal">
-        <div class="interest-form">
-            <button class="modal-close" onclick="closeInterestForm()">×</button>
-            <div id="interestFormContent">
-                <h3>Join Our Launch Waitlist</h3>
-                <p>Be the first to know when Scatto launches and get early access to our ethically-sourced photography collection.</p>
-                
-                <form id="interestForm" onsubmit="submitInterest(event)">
-                    <div class="form-group">
-                        <label for="orgName">Organization Name *</label>
-                        <input type="text" id="orgName" name="orgName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="contactName">Your Name *</label>
-                        <input type="text" id="contactName" name="contactName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="orgType">Organization Type</label>
-                        <select id="orgType" name="orgType">
-                            <option value="">Select type...</option>
-                            <option value="nonprofit">Non-profit</option>
-                            <option value="ngo">NGO</option>
-                            <option value="foundation">Foundation</option>
-                            <option value="social-enterprise">Social Enterprise</option>
-                            <option value="government">Government</option>
-                            <option value="un-agency">UN Agency</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="focusAreas">Focus Areas</label>
-                        <input type="text" id="focusAreas" name="focusAreas" placeholder="e.g., education, healthcare, environment">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="photoNeeds">Tell us about your photography needs</label>
-                        <textarea id="photoNeeds" name="photoNeeds" placeholder="What types of images do you typically need? What regions do you work in?"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">Join Waitlist</button>
-                </form>
-            </div>
-            
-            <div id="successMessage" class="form-success" style="display: none;">
-                <h3>🎉 Thanks for your interest!</h3>
-                <p>We'll notify you as soon as Scatto launches and send you exclusive early access.</p>
-                <button class="btn btn-primary" onclick="closeInterestForm()">Continue Browsing</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Scatto. Ethical photography for lasting impact.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Sample photo data
-        const photos = {
-            photo1: {
-                title: "Hazrati Imam Complex, Uzbekistan",
-                location: "Tashkent, Uzbekistan",
-                category: "Culture & Heritage",
-                photographer: "Ottavia Brussino",
-                license: "Standard License",
-                price: 12,
-                description: "Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual heart of Uzbekistan's capital. This historic Islamic complex represents the intersection of faith, culture, and architectural heritage in Central Asia. Perfect for organizations working on interfaith dialogue, cultural preservation, religious tourism, or Central Asian community programs.",
-                image: "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1"
-            }
-        };
-
-        let interestedPhotos = [];
-
-        function openModal(photoId) {
-            const photo = photos[photoId];
-            if (!photo) return;
-
-            document.getElementById('modalImage').src = photo.image;
-            document.getElementById('modalTitle').textContent = photo.title;
-            document.getElementById('modalLocation').textContent = photo.location;
-            document.getElementById('modalCategory').textContent = photo.category;
-            document.getElementById('modalPhotographer').textContent = photo.photographer;
-            document.getElementById('modalLicense').textContent = photo.license;
-            document.getElementById('modalDescription').textContent = photo.description;
-            
-            document.getElementById('photoModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('photoModal').classList.remove('active');
-        }
-
-        function expressInterest(photoId) {
-            // Track interested photos
-            if (!interestedPhotos.includes(photoId)) {
-                interestedPhotos.push(photoId);
-            }
-            
-            // Show success feedback
-            const button = event.target;
-            const originalText = button.textContent;
-            button.textContent = 'Interested!';
-            button.style.background = '#28a745';
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.background = '';
-            }, 1500);
-            
-            // Show interest form after a short delay
-            setTimeout(() => {
-                showInterestForm();
-            }, 2000);
-        }
-
-        function showInterestForm() {
-            document.getElementById('interestModal').classList.add('active');
-        }
-
-        function closeInterestForm() {
-            document.getElementById('interestModal').classList.remove('active');
-            document.getElementById('interestFormContent').style.display = 'block';
-            document.getElementById('successMessage').style.display = 'none';
-        }
-
-        function submitInterest(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            data.interestedPhotos = interestedPhotos;
-            
-            // In a real app, you'd send this to your backend
-            console.log('Interest form submission:', data);
-            
-            // Show success message
-            document.getElementById('interestFormContent').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-        }
-
-        // Close modals when clicking outside
-        document.getElementById('photoModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        document.getElementById('interestModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeInterestForm();
-            }
-        });
-
-        // Filter functionality
-        document.getElementById('category-filter').addEventListener('change', filterPhotos);
-        document.getElementById('continent-filter').addEventListener('change', filterPhotos);
-        document.getElementById('country-filter').addEventListener('change', filterPhotos);
-        document.getElementById('license-filter').addEventListener('change', filterPhotos);
-
-        function filterPhotos() {
-            // This would implement actual filtering logic
-            console.log('Filtering photos...');
-        }
-
-        // Search functionality
-        document.querySelector('.search-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchPhotos();
-            }
-        });
-
-        document.querySelector('.search-btn').addEventListener('click', searchPhotos);
-
-        function searchPhotos() {
-            const query = document.querySelector('.search-input').value;
-            console.log('Searching for:', query);
-            // This would implement actual search logic
-        }
-    </script>
-</body>
-</html>
+                <img id="modalImage" class="modal-image" src="" alt="" on

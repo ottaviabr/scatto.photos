@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Photography | Scatto Photos</title>
+    <meta name="description" content="Commission authentic photography for your impact organization. Work directly with experienced photographers who understand your mission.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4A5D73;
+            --secondary: #FEFCF8;
+            --accent: #D4A574;
+            --text: #1A2332;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(254, 252, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .tagline-nav {
+            position: absolute;
+            left: 85px;
+            bottom: -6px;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3A4D63;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 140px 24px 100px;
+        }
+
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .page-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 32px;
+        }
+
+        .page-intro {
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .process-card {
+            background: linear-gradient(135deg, #FEFCF8 0%, rgba(212, 165, 116, 0.03) 100%);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+        }
+
+        .process-number {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .process-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .process-card p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .photographer-section {
+            background: linear-gradient(135deg, #FEFCF8 0%, rgba(212, 165, 116, 0.03) 100%);
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin-bottom: 80px;
+            box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+        }
+
+        .photographer-card {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .photographer-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(26, 35, 50, 0.15);
+        }
+
+        .photographer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photographer-info h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .photographer-title {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .photographer-bio {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .photographer-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-gallery {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-gallery:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-section {
+            background: var(--primary);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 32px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            background: white;
+            color: var(--text);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: white;
+            padding: 60px 0 32px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #374151;
+            opacity: 0.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 42px;
+            }
+
+            .page-subtitle {
+                font-size: 20px;
+            }
+
+            .page-intro {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 120px 20px 80px;
+            }
+
+            .photographer-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .photographer-image {
+                margin: 0 auto;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-section {
+                padding: 40px 24px;
+            }
+
+            .photographer-section {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A5D73;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3A4D63;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C8956A;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.6" />
+                            <stop offset="70%" style="stop-color:#4A5D73;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#4A5D73;stop-opacity:0.7" />
+                        </radialGradient>
+                    </defs>
+                    <g transform="translate(5, 5)">
+                        <circle cx="15" cy="12.5" r="12" fill="none" stroke="url(#primaryGradient)" stroke-width="1.2" opacity="0.5"/>
+                        <circle cx="15" cy="12.5" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.6"/>
+                        <circle cx="15" cy="12.5" r="5.5" fill="url(#irisGradient)"/>
+                        <circle cx="15" cy="12.5" r="2.2" fill="url(#primaryGradient)"/>
+                        <ellipse cx="16.2" cy="11.5" rx="0.7" ry="1" fill="#FEFCF8" opacity="0.7" transform="rotate(-20 16.2 11.5)"/>
+                        <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
+                    </g>
+                </svg>
+                <div class="logo-text">Scatto</div>
+                <div class="tagline-nav">mindful stories</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/custom-photography">Custom Photography</a></li>
+                <li><a href="/manifesto">Our Manifesto</a></li>
+                <li><a href="/ethics">Our Ethics</a></li>
+                <li><a href="#plans">Plans</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-outline">Sign In</a>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 12H5m0 0l7 7m-7-7l7-7"/>
+            </svg>
+            Back to Scatto Photos
+        </a>
+
+        <div class="page-header">
+            <h1 class="page-title">Custom Photography</h1>
+            <div class="page-subtitle">Authentic storytelling, tailored to your mission</div>
+            <p class="page-intro">
+                Work directly with impact-experienced photographers who understand your work and communities. From documenting programs to capturing brand stories, we connect you with artists who see beyond the surface.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Share Your Vision</h3>
+                    <p>Tell us about your project, timeline, and the story you want to tell. We'll match you with the right photographer.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Connect & Plan</h3>
+                    <p>Meet your photographer, discuss details, and plan the shoot. All communication happens through our platform.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Capture & Deliver</h3>
+                    <p>Professional photography delivered with full licensing, consent documentation, and usage rights.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Meet Our Photographers</h2>
+            <div class="photographer-section">
+                <div class="photographer-card">
+                    <div class="photographer-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/ottavia-profile.jpg" alt="Ottavia Brussino" onerror="this.style.display='none'">
+                    </div>
+                    <div class="photographer-info">
+                        <h3>Ottavia Brussino</h3>
+                        <div class="photographer-title">Impact Photographer</div>
+                        <div class="photographer-bio">
+                            Impact professional with 7+ years working across international organizations, from J-PAL and OECD to foundations and social ventures. Currently at J-PAL Europe, MIT-based centre founded by Nobel Laureates Esther Duflo and Abhijit Banerjee to reduce poverty by ensuring that policy is informed by scientific evidence. Ottavia's approach blends evidence with empathy, capturing authentic stories that connect with audiences and honor the communities she photographs. Founder of Scatto.
+                        </div>
+                        <div class="photographer-actions">
+                            <a href="/gallery" class="btn btn-gallery">View Gallery</a>
+                            <a href="#contact" class="btn btn-primary">Start Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2>Start Your Project</h2>
+            <p>Ready to tell your story through authentic photography? Share your project details and we'll get back to you within 24 hours.</p>
+            
+            <form class="contact-form" netlify>
+                <div class="form-group">
+                    <label for="organization">Organization Name *</label>
+                    <input type="text" id="organization" name="organization" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-name">Your Name *</label>
+                    <input type="text" id="contact-name" name="contact-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-type">Project Type</label>
+                    <select id="project-type" name="project-type">
+                        <option value="">Select project type</option>
+                        <option value="program-documentation">Program Documentation</option>
+                        <option value="brand-photography">Brand Photography</option>
+                        <option value="event-coverage">Event Coverage</option>
+                        <option value="community-stories">Community Stories</option>
+                        <option value="annual-report">Annual Report</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="timeline">Timeline</label>
+                    <select id="timeline" name="timeline">
+                        <option value="">Select timeline</option>
+                        <option value="asap">ASAP (within 2 weeks)</option>
+                        <option value="month">Within 1 month</option>
+                        <option value="quarter">Within 3 months</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="City, Country">
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-details">Project Details *</label>
+                    <textarea id="project-details" name="project-details" placeholder="Tell us about your project, goals, and the story you want to tell..." required></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">Send Project Brief</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Scatto</h3>
+                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/custom-photography">Custom Photography</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="/manifesto">Our Manifesto</a></li>
+                    <li><a href="/ethics">Our Ethics</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Join Us</h4>
+                <ul>
+                    <li><a href="#">For Photographers</a></li>
+                    <li><a href="#">For Organizations</a></li>
+                    <li><a href="#">Get Early Access</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
+        </div>
+    </footer>
+</body>
+</html>

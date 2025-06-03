@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatto Stock - Browse Authentic Photography</title>
+    <meta name="description" content="Browse our collection of ethically-sourced photography for impact organizations.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4A5D73;
+            --secondary: #FEFCF8;
+            --accent: #D4A574;
+            --text: #1A2332;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(254, 252, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            position: absolute;
+            left: 75px;
+            bottom: -4px;
+            color: var(--accent);
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-center a:hover {
+            color: var(--primary);
+        }
+
+        .nav-center .active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cart-btn {
+            position: relative;
+            padding: 8px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3A4D63;
+            transform: translateY(-1px);
+        }
+
+        /* Main Content */
+        .main {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        /* Search & Filters */
+        .search-section {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .search-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .search-header h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .search-header p {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+
+        .search-bar {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 50px 16px 20px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .filters {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            position: relative;
+        }
+
+        .filter-select {
+            padding: 12px 40px 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            cursor: pointer;
+            appearance: none;
+            min-width: 160px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .filter-group::after {
+            content: '▼';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 10px;
+            pointer-events: none;
+        }
+
+        /* Results Header */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .results-info {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 8px;
+        }
+
+        .view-btn {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Photo Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(26, 35, 50, 0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(26, 35, 50, 0.15);
+        }
+
+        .photo-image {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .photo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+        }
+
+        .photo-image::after {
+            content: 'PREVIEW';
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(26, 35, 50, 0.7);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .photo-credit {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            background: rgba(26, 35, 50, 0.7);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 500;
+        }
+
+        .photo-credit::before {
+            content: '© ';
+        }
+
+        .photo-card:hover .photo-image img {
+            transform: scale(1.05);
+        }
+
+        .photo-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(26, 35, 50, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .photo-price {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(26, 35, 50, 0.8);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .photo-info {
+            padding: 20px;
+        }
+
+        .photo-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .photo-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .photo-location {
+            font-size: 13px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .photo-category {
+            background: #F5E6D3;
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .photo-description {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .photo-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+        }
+
+        .btn-add-cart {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-add-cart:hover {
+            background: #3A4D63;
+        }
+
+        .btn-preview {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-preview:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 35, 50, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(26, 35, 50, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 10;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .modal-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(212, 165, 116, 0.1) 35%, 
+                rgba(212, 165, 116, 0.2) 40%, 
+                transparent 45%,
+                transparent 55%,
+                rgba(212, 165, 116, 0.1) 60%,
+                rgba(212, 165, 116, 0.2) 65%,
+                transparent 70%
+            );
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .watermark-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(74, 93, 115, 0.15);
+            color: rgba(74, 93, 115, 0.6);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            pointer-events: none;
+            backdrop-filter: blur(2px);
+        }
+
+        .modal-info {
+            padding: 32px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .modal-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: var(--secondary);
+            border-radius: 8px;
+        }
+
+        .meta-item h4 {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .meta-item p {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .modal-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .license-info {
+            background: #F5E6D3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        .license-info h4 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .license-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 60px;
+        }
+
+        .page-btn {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .page-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Interest Form Modal */
+        .interest-form {
+            background: white;
+            border-radius: 16px;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .interest-form h3 {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .interest-form p {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-submit:hover {
+            background: #3A4D63;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .form-success h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .form-success p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .search-header h1 {
+                font-size: 28px;
+            }
+
+            .filters {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-select {
+                min-width: 200px;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 16px;
+            }
+
+            .results-header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            .modal-content {
+                margin: 20px;
+                max-width: calc(100% - 40px);
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A5D73;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3A4D63;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C8956A;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.6" />
+                            <stop offset="70%" style="stop-color:#4A5D73;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#4A5D73;stop-opacity:0.7" />
+                        </radialGradient>
+                    </defs>
+                    <g transform="translate(5, 5)">
+                        <circle cx="15" cy="12.5" r="12" fill="none" stroke="url(#primaryGradient)" stroke-width="1.2" opacity="0.5"/>
+                        <circle cx="15" cy="12.5" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.6"/>
+                        <circle cx="15" cy="12.5" r="5.5" fill="url(#irisGradient)"/>
+                        <circle cx="15" cy="12.5" r="2.2" fill="url(#primaryGradient)"/>
+                        <ellipse cx="16.2" cy="11.5" rx="0.7" ry="1" fill="#FEFCF8" opacity="0.7" transform="rotate(-20 16.2 11.5)"/>
+                        <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
+                    </g>
+                </svg>
+                <div class="logo-text">Scatto</div>
+                <div class="tagline">mindful stories</div>
+            </div>
+            <div class="nav-center">
+                <a href="#" class="active">Browse Photos</a>
+                <a href="#">Custom Projects</a>
+                <a href="#">For Photographers</a>
+            </div>
+            <div class="user-menu">
+                <a href="#" class="btn btn-primary" onclick="showInterestForm()">Get Early Access</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-header">
+                    <div style="background: var(--accent); color: white; padding: 8px 16px; border-radius: 20px; display: inline-block; margin-bottom: 16px; font-size: 14px; font-weight: 600;">
+                        COMING SOON - PREVIEW VERSION
+                    </div>
+                    <h1>Ethical Photography for Impact Organizations</h1>
+                    <p>Explore our curated collection concept. Express interest to join our launch waitlist.</p>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search by keyword, location, or subject...">
+                    <button class="search-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <select class="filter-select" id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="community">Community Engagement</option>
+                            <option value="healthcare">Healthcare & Medical</option>
+                            <option value="education">Education & Learning</option>
+                            <option value="environment">Environment & Sustainability</option>
+                            <option value="economic">Economic Development</option>
+                            <option value="agriculture">Agriculture & Food Security</option>
+                            <option value="culture">Culture & Heritage</option>
+                            <option value="human-rights">Human Rights & Social Justice</option>
+                            <option value="migration">Migration & Displacement</option>
+                            <option value="governance">Governance & Democracy</option>
+                            <option value="peace">Peace & Conflict Resolution</option>
+                            <option value="women">Women's Empowerment</option>
+                            <option value="youth">Youth & Children</option>
+                            <option value="humanitarian">Humanitarian & Relief</option>
+                            <option value="arts">Arts & Creativity</option>
+                            <option value="mental-health">Mental Health & Wellbeing</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select" id="continent-filter">
+                            <option value="">All Continents</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="north-america">North America</option>
+                            <option value="south-america">South America</option>
+                            <option value="oceania">Oceania</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select" id="country-filter">
+                            <option value="">All Countries</option>
+                            <option value="tanzania">Tanzania</option>
+                            <option value="uzbekistan">Uzbekistan</option>
+                            <option value="namibia">Namibia</option>
+                            <option value="india">India</option>
+                            <option value="peru">Peru</option>
+                            <option value="bangladesh">Bangladesh</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select" id="license-filter">
+                            <option value="">All Licenses</option>
+                            <option value="standard">Standard License</option>
+                            <option value="extended">Extended License</option>
+                            <option value="exclusive">Exclusive License</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container">
+            <div class="results-header">
+                <div class="results-info">
+                    Showing <strong>24</strong> results
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active">Grid</button>
+                    <button class="view-btn">List</button>
+                </div>
+            </div>
+
+            <!-- Photo Grid -->
+            <div class="photo-grid" id="photo-grid">
+                <!-- Sample Photos - these would be dynamically loaded -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <div class="photo-image">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0e3e2c78de2?w=400&h=300&fit=crop" alt="Community Meeting" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-badge">EXCLUSIVE</div>
+                        <div class="photo-price">$12</div>
+                        <div class="photo-credit">Sarah Kimani</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Village Community Meeting</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Kenya, East Africa</span>
+                            <span class="photo-category">Community</span>
+                        </div>
+                        <p class="photo-description">Local leaders gathering to discuss water access initiatives in rural Kenya.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo1')">Add to Cart</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo1')">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo2')">
+                    <div class="photo-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop" alt="Healthcare Worker" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$35</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Mobile Health Clinic</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Guatemala, Central America</span>
+                            <span class="photo-category">Healthcare</span>
+                        </div>
+                        <p class="photo-description">Healthcare worker providing medical checkups in remote mountain communities.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo2')">Add to Cart</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo3')">
+                    <div class="photo-image">
+                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&h=300&fit=crop" alt="School Children" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$40</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Girls' Education Program</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Bangladesh, South Asia</span>
+                            <span class="photo-category">Education</span>
+                        </div>
+                        <p class="photo-description">Young girls participating in literacy programs designed to improve access to education.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo3')">Add to Cart</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo4')">
+                    <div class="photo-image">
+                        <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=400&h=300&fit=crop" alt="Solar Installation" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$50</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Solar Energy Project</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">India, South Asia</span>
+                            <span class="photo-category">Environment</span>
+                        </div>
+                        <p class="photo-description">Community members installing solar panels to provide clean energy access.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo4')">Add to Cart</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo4')">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo5')">
+                    <div class="photo-image">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="Women Farmers" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$38</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Women's Agricultural Cooperative</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Peru, South America</span>
+                            <span class="photo-category">Agriculture</span>
+                        </div>
+                        <p class="photo-description">Female farmers working together in sustainable agriculture initiatives.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo5')">Add to Cart</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo5')">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo6')">
+                    <div class="photo-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Cultural Festival" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-badge">NEW</div>
+                        <div class="photo-price">$42</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Traditional Cultural Festival</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Morocco, North Africa</span>
+                            <span class="photo-category">Culture</span>
+                        </div>
+                        <p class="photo-description">Community celebrating traditional heritage through music and dance performances.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); addToCart('photo6')">Add to Cart</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo6')">Preview</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn">Previous</a>
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <a href="#" class="page-btn">Next</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div style="position: relative;">
+                <img id="modalImage" class="modal-image" src="" alt="" oncontextmenu="return false" ondragstart="return false">
+                <div class="watermark-overlay">SCATTO PREVIEW</div>
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <h4>Location</h4>
+                        <p id="modalLocation"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Category</h4>
+                        <p id="modalCategory"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Photographer</h4>
+                        <p id="modalPhotographer"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>License</h4>
+                        <p id="modalLicense"></p>
+                    </div>
+                </div>
+                <p id="modalDescription" class="modal-description"></p>
+                <div class="license-info">
+                    <h4>🚀 Coming Soon - Get Early Access</h4>
+                    <p>This platform is launching soon! Express your interest to be notified when these ethically-sourced photographs become available for licensing.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-large btn-primary" onclick="showInterestForm()">Join Launch Waitlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interest Form Modal -->
+    <div class="modal" id="interestModal">
+        <div class="interest-form">
+            <button class="modal-close" onclick="closeInterestForm()">×</button>
+            <div id="interestFormContent">
+                <h3>Join Our Launch Waitlist</h3>
+                <p>Be the first to know when Scatto launches and get early access to our ethically-sourced photography collection.</p>
+                
+                <form id="interestForm" onsubmit="submitInterest(event)">
+                    <div class="form-group">
+                        <label for="orgName">Organization Name *</label>
+                        <input type="text" id="orgName" name="orgName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactName">Your Name *</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orgType">Organization Type</label>
+                        <select id="orgType" name="orgType">
+                            <option value="">Select type...</option>
+                            <option value="nonprofit">Non-profit</option>
+                            <option value="ngo">NGO</option>
+                            <option value="foundation">Foundation</option>
+                            <option value="social-enterprise">Social Enterprise</option>
+                            <option value="government">Government</option>
+                            <option value="un-agency">UN Agency</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="focusAreas">Focus Areas</label>
+                        <input type="text" id="focusAreas" name="focusAreas" placeholder="e.g., education, healthcare, environment">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photoNeeds">Tell us about your photography needs</label>
+                        <textarea id="photoNeeds" name="photoNeeds" placeholder="What types of images do you typically need? What regions do you work in?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Join Waitlist</button>
+                </form>
+            </div>
+            
+            <div id="successMessage" class="form-success" style="display: none;">
+                <h3>🎉 Thanks for your interest!</h3>
+                <p>We'll notify you as soon as Scatto launches and send you exclusive early access.</p>
+                <button class="btn btn-primary" onclick="closeInterestForm()">Continue Browsing</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Scatto. Ethical photography for lasting impact.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample photo data
+        const photos = {
+            photo1: {
+                title: "Hazrati Imam Complex, Uzbekistan",
+                location: "Tashkent, Uzbekistan",
+                category: "Culture & Heritage",
+                photographer: "Ottavia Brussino",
+                license: "Standard License",
+                price: 12,
+                description: "Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual heart of Uzbekistan's capital. This historic Islamic complex represents the intersection of faith, culture, and architectural heritage in Central Asia. Perfect for organizations working on interfaith dialogue, cultural preservation, religious tourism, or Central Asian community programs.",
+                image: "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1.jpg"
+            },
+            photo2: {
+                title: "Mobile Health Clinic",
+                location: "Guatemala, Central America", 
+                category: "Healthcare & Medical",
+                photographer: "Carlos Mendez",
+                license: "Standard License",
+                price: 10,
+                description: "Healthcare worker providing medical checkups and health education in remote mountain communities. This photograph documents the critical work of bringing healthcare access to underserved populations.",
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop"
+            },
+            photo3: {
+                title: "Girls' Education Program",
+                location: "Bangladesh, South Asia",
+                category: "Education & Learning", 
+                photographer: "Rashida Rahman",
+                license: "Extended License",
+                price: 8,
+                description: "Young girls participating in literacy programs designed to improve access to education and break cycles of poverty. This image represents hope and the transformative power of education.",
+                image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop"
+            },
+            photo4: {
+                title: "Solar Energy Project",
+                location: "India, South Asia",
+                category: "Environment & Sustainability",
+                photographer: "Arjun Patel", 
+                license: "Standard License",
+                price: 15,
+                description: "Community members working together to install solar panels that will provide clean, renewable energy access to their village. This image captures the intersection of environmental sustainability and community development.",
+                image: "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=600&fit=crop"
+            },
+            photo5: {
+                title: "Women's Agricultural Cooperative",
+                location: "Peru, South America",
+                category: "Economic Development",
+                photographer: "Elena Rodriguez",
+                license: "Standard License", 
+                price: 9,
+                description: "Female farmers working together in sustainable agriculture initiatives that empower women economically while promoting environmentally friendly farming practices.",
+                image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop"
+            },
+            photo6: {
+                title: "Traditional Cultural Festival",
+                location: "Morocco, North Africa",
+                category: "Culture & Heritage",
+                photographer: "Amina Benali",
+                license: "Extended License",
+                price: 11,
+                description: "Community members celebrating traditional heritage through music and dance performances, preserving cultural identity while building social cohesion.",
+                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop"
+            }
+        };
+
+        let interestedPhotos = [];
+
+        function openModal(photoId) {
+            const photo = photos[photoId];
+            if (!photo) return;
+
+            document.getElementById('modalImage').src = photo.image;
+            document.getElementById('modalTitle').textContent = photo.title;
+            document.getElementById('modalLocation').textContent = photo.location;
+            document.getElementById('modalCategory').textContent = photo.category;
+            document.getElementById('modalPhotographer').textContent = photo.photographer;
+            document.getElementById('modalLicense').textContent = photo.license;
+            document.getElementById('modalDescription').textContent = photo.description;
+            
+            document.getElementById('photoModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').classList.remove('active');
+        }
+
+        function expressInterest(photoId) {
+            // Track interested photos
+            if (!interestedPhotos.includes(photoId)) {
+                interestedPhotos.push(photoId);
+            }
+            
+            // Show success feedback
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Interested!';
+            button.style.background = '#28a745';
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 1500);
+            
+            // Show interest form after a short delay
+            setTimeout(() => {
+                showInterestForm();
+            }, 2000);
+        }
+
+        function showInterestForm() {
+            document.getElementById('interestModal').classList.add('active');
+        }
+
+        function closeInterestForm() {
+            document.getElementById('interestModal').classList.remove('active');
+            document.getElementById('interestFormContent').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function submitInterest(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            data.interestedPhotos = interestedPhotos;
+            
+            // In a real app, you'd send this to your backend
+            console.log('Interest form submission:', data);
+            
+            // Show success message
+            document.getElementById('interestFormContent').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        }
+
+        // Close modals when clicking outside
+        document.getElementById('photoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.getElementById('interestModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeInterestForm();
+            }
+        });
+
+        // Filter functionality
+        document.getElementById('category-filter').addEventListener('change', filterPhotos);
+        document.getElementById('continent-filter').addEventListener('change', filterPhotos);
+        document.getElementById('country-filter').addEventListener('change', filterPhotos);
+        document.getElementById('license-filter').addEventListener('change', filterPhotos);
+
+        function filterPhotos() {
+            // This would implement actual filtering logic
+            console.log('Filtering photos...');
+        }
+
+        // Search functionality
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchPhotos();
+            }
+        });
+
+        document.querySelector('.search-btn').addEventListener('click', searchPhotos);
+
+        function searchPhotos() {
+            const query = document.querySelector('.search-input').value;
+            console.log('Searching for:', query);
+            // This would implement actual search logic
+        }
+    </script>
+</body>
+</html>

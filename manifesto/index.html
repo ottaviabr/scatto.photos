@@ -1,12 +1,4 @@
-        .story-text {
-            margin-top: 20px;
-        }
-
-        .story-text p {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 32px;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,7 +73,7 @@
         .tagline-nav {
             position: absolute;
             left: 85px;
-            bottom: -6px;
+            bottom: -8px;
             color: var(--accent);
             font-size: 11px;
             font-weight: 300;
@@ -92,7 +84,7 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             list-style: none;
         }
 
@@ -100,11 +92,29 @@
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
         }
 
         .nav-cta {
@@ -259,6 +269,16 @@
             box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
         }
 
+        .story-text {
+            margin-top: 20px;
+        }
+
+        .story-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
         .cta {
             text-align: center;
             margin-top: 80px;
@@ -341,7 +361,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 40px;
             margin-bottom: 40px;
             max-width: 1200px;
@@ -481,10 +501,11 @@
                 <div class="tagline-nav">mindful stories</div>
             </div>
             <ul class="nav-links">
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#agency">Agency</a></li>
-                <li><a href="#photographers">For Photographers</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/custom-photography">Custom Photography</a></li>
+                <li><a href="/manifesto">Our Manifesto</a></li>
+                <li><a href="/ethics">Our Ethics</a></li>
+                <li><a href="#plans">Plans</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#" class="btn btn-outline">Sign In</a>
@@ -512,13 +533,11 @@
 
         <div class="manifesto-content">
             <div class="manifesto-text">
-                <p>Impact organizations are doing incredible work, but finding authentic, high-quality imagery that truly represents their mission is challenging and often expensive. Many are limited to generic stock photos, low-resolution images, or costly custom shoots that stretch budgets meant for program delivery.</p>
+                <p>Impact organizations do incredible work, but finding authentic imagery that truly represents their mission is challenging and expensive. Many are stuck with generic stock photos or costly shoots that stretch program budgets.</p>
 
-                <p>Photography is an art form that deserves fair compensation, yet effective visual storytelling shouldn't be a luxury available only to well-funded organizations. Scatto bridges this gap by creating a sustainable model where photographers are paid fairly for their craft while keeping authentic imagery accessible to organizations of all sizes, from grassroots nonprofits to global foundations and mission-driven companies.</p>
+                <p>Scatto creates a sustainable model where photographers earn fair compensation while keeping authentic imagery accessible to organizations of all sizes, from grassroots nonprofits to global foundations and mission-driven companies.</p>
 
-                <p>Quality visual storytelling should be accessible to every organization creating real change. As AI becomes the default solution for everything, we believe organizations making real impact deserve real storytelling through human eyes, captured by artists who understand the communities they photograph.</p>
-
-                <p>The eyes through which you tell your story determine how the world sees your impact. Authentic visuals don't just look better, they drive more donations, attract better partnerships, and build the trust that turns viewers into supporters.</p>
+                <p>As AI becomes the default, we believe real impact deserves real storytelling through human eyes. Authentic visuals drive more donations, better partnerships, and the trust that turns viewers into supporters.</p>
             </div>
 
             <div class="beliefs">
@@ -583,28 +602,20 @@
             <div class="footer-links">
                 <h4>Platform</h4>
                 <ul>
-                    <li><a href="#">Browse Photos</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Enterprise</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/custom-photography">Custom Photography</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="/manifesto">Our Manifesto</a></li>
+                    <li><a href="/ethics">Our Ethics</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Agency</h4>
-                <ul>
-                    <li><a href="#">Custom Projects</a></li>
-                    <li><a href="#">Photographer Network</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Get Quote</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Community</h4>
+                <h4>Join Us</h4>
                 <ul>
                     <li><a href="#">For Photographers</a></li>
-                    <li><a href="#">Ethics Guidelines</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Support</a></li>
+                    <li><a href="#">For Organizations</a></li>
+                    <li><a href="#">Get Early Access</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
         </div>

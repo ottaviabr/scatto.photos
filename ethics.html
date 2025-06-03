@@ -1,236 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ethics | Scatto Photos</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-```
-    :root {
-        --primary: #4A5D73;
-        --secondary: #FEFCF8;
-        --accent: #D4A574;
-        --text: #1A2332;
-        --text-light: #64748B;
-        --border: #E2E8F0;
-    }
-
-    body {
-        font-family: 'Inter', sans-serif;
-        line-height: 1.6;
-        color: var(--text);
-        background: var(--secondary);
-    }
-
-    .container {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 60px 20px;
-    }
-
-    .back-link {
-        color: var(--text-light);
-        text-decoration: none;
-        font-size: 14px;
-        margin-bottom: 40px;
-        display: inline-block;
-        transition: color 0.3s;
-    }
-
-    .back-link:hover {
-        color: var(--primary);
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 30px;
-        color: var(--primary);
-        text-align: center;
-    }
-
-    .intro {
-        font-size: 1.2rem;
-        line-height: 1.7;
-        margin-bottom: 50px;
-        text-align: center;
-        color: var(--accent);
-        font-weight: 500;
-    }
-
-    .section {
-        margin-bottom: 50px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: var(--primary);
-    }
-
-    p {
-        margin-bottom: 20px;
-        font-size: 1.1rem;
-        line-height: 1.7;
-    }
-
-    ul {
-        list-style: none;
-        margin: 20px 0;
-    }
-
-    li {
-        margin-bottom: 12px;
-        padding-left: 25px;
-        position: relative;
-        font-size: 1.05rem;
-    }
-
-    li:before {
-        content: "◆";
-        color: var(--accent);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-        font-size: 0.8em;
-        top: 0.3em;
-    }
-
-    .commitment-box {
-        background: linear-gradient(135deg, rgba(74, 93, 115, 0.05) 0%, rgba(212, 165, 116, 0.05) 100%);
-        padding: 30px;
-        border-radius: 12px;
-        border-left: 4px solid var(--accent);
-        margin: 30px 0;
-    }
-
-    .commitment-box p {
-        font-size: 1.1rem;
-        font-weight: 500;
-        margin: 0;
-        color: var(--primary);
-    }
-
-    .contact {
-        background: rgba(74, 93, 115, 0.8);
-        color: white;
-        padding: 30px;
-        border-radius: 12px;
-        text-align: center;
-        margin-top: 50px;
-    }
-
-    .contact h2 {
-        color: white;
-        margin-bottom: 15px;
-        font-size: 1.3rem;
-    }
-
-    .contact p {
-        opacity: 0.9;
-        margin-bottom: 15px;
-    }
-
-    .contact a {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .contact a:hover {
-        text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2rem;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Ethics | Scatto Photos</title>
+    <meta name="description" content="Every photograph tells a story. We make sure it's told with respect.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        :root {
+            --primary: #4A5D73;
+            --secondary: #FEFCF8;
+            --accent: #D4A574;
+            --text: #1A2332;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(254, 252, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .tagline-nav {
+            position: absolute;
+            left: 85px;
+            bottom: -6px;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3A4D63;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Main Content */
         .container {
-            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 24px 100px;
         }
 
-        .intro {
-            font-size: 1.2rem;
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+            font-weight: 500;
         }
-    }
-</style>
 
-```
+        .back-link:hover {
+            color: var(--primary);
+        }
 
+        .ethics-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .ethics-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .ethics-intro {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1.4;
+        }
+
+        .ethics-content {
+            margin-bottom: 80px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .section p strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .section ul {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .section li {
+            margin-bottom: 16px;
+            padding-left: 32px;
+            position: relative;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .section li:before {
+            content: "◆";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+            top: 2px;
+        }
+
+        .commitment-box {
+            background: linear-gradient(135deg, #FEFCF8 0%, rgba(212, 165, 116, 0.03) 100%);
+            padding: 40px;
+            border-radius: 16px;
+            border-left: 6px solid var(--accent);
+            margin: 40px 0;
+            box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+        }
+
+        .commitment-box p {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        .standards-card, .community-card, .realworld-card, .matters-card {
+            background: linear-gradient(135deg, #FEFCF8 0%, rgba(212, 165, 116, 0.03) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+        }
+
+        .contact {
+            background: var(--primary);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .contact h2 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .contact p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: white;
+            padding: 60px 0 32px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #374151;
+            opacity: 0.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ethics-title {
+                font-size: 42px;
+            }
+
+            .ethics-intro {
+                font-size: 20px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .section p {
+                font-size: 16px;
+            }
+
+            .section li {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 120px 20px 80px;
+            }
+
+            .standards-card, .community-card, .realworld-card, .matters-card, .commitment-box {
+                padding: 30px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact {
+                padding: 40px 24px;
+            }
+
+            .contact h2 {
+                font-size: 24px;
+            }
+
+            .contact p, .contact a {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<a href="/" class="back-link">← Back to Scatto Photos</a>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A5D73;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3A4D63;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C8956A;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.6" />
+                            <stop offset="70%" style="stop-color:#4A5D73;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#4A5D73;stop-opacity:0.7" />
+                        </radialGradient>
+                    </defs>
+                    <g transform="translate(5, 5)">
+                        <circle cx="15" cy="12.5" r="12" fill="none" stroke="url(#primaryGradient)" stroke-width="1.2" opacity="0.5"/>
+                        <circle cx="15" cy="12.5" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.6"/>
+                        <circle cx="15" cy="12.5" r="5.5" fill="url(#irisGradient)"/>
+                        <circle cx="15" cy="12.5" r="2.2" fill="url(#primaryGradient)"/>
+                        <ellipse cx="16.2" cy="11.5" rx="0.7" ry="1" fill="#FEFCF8" opacity="0.7" transform="rotate(-20 16.2 11.5)"/>
+                        <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
+                    </g>
+                </svg>
+                <div class="logo-text">Scatto</div>
+                <div class="tagline-nav">mindful stories</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#agency">Agency</a></li>
+                <li><a href="#photographers">For Photographers</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-outline">Sign In</a>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
 
-```
-    <h1>Our Ethics</h1>
+    <!-- Main Content -->
+    <div class="container">
+        <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 12H5m0 0l7 7m-7-7l7-7"/>
+            </svg>
+            Back to Scatto Photos
+        </a>
 
-    <div class="intro">
-        Every photograph tells a story. We make sure it's told with respect.
+        <div class="ethics-header">
+            <h1 class="ethics-title">Our Ethics</h1>
+            <div class="ethics-intro">
+                Every photograph tells a story. We make sure it's told with respect.
+            </div>
+        </div>
+
+        <div class="ethics-content">
+            <div class="section">
+                <h2>What We Promise</h2>
+                <p>Every image on Scatto comes from photographers who understand that authentic storytelling requires ethical practices. We don't just curate beautiful photos, we curate responsible ones.</p>
+
+                <div class="commitment-box">
+                    <p>All photography is created with appropriate consent, community respect, and human dignity at the center.</p>
+                </div>
+            </div>
+
+            <div class="section standards-card">
+                <h2>Our Standards</h2>
+                <p>We work with photographers who commit to:</p>
+                <ul>
+                    <li>Obtaining proper consent from individuals and communities</li>
+                    <li>Building genuine relationships, not extractive practices</li>
+                    <li>Representing people with dignity and avoiding harmful stereotypes</li>
+                    <li>Being transparent about how images will be used</li>
+                    <li>Respecting cultural contexts and local customs</li>
+                    <li>Never photographing identifiable minors without guardian consent</li>
+                </ul>
+            </div>
+
+            <div class="section community-card">
+                <h2>Community First</h2>
+                <p>The communities in our photographs aren't just subjects, they're partners in storytelling. We maintain systems for:</p>
+                <ul>
+                    <li>Community feedback and concerns</li>
+                    <li>Image removal requests</li>
+                    <li>Ongoing photographer accountability</li>
+                    <li>Cultural sensitivity review</li>
+                </ul>
+            </div>
+
+            <div class="section realworld-card">
+                <h2>Real-World Ethics</h2>
+                <p>We understand that ethical photography looks different in different contexts. A community meeting requires different consent than a public rally. Emergency documentation has different constraints than planned portraits.</p>
+
+                <p>Our approach is principled but practical, always prioritizing human dignity while recognizing the realities of documentary work.</p>
+            </div>
+
+            <div class="section matters-card">
+                <h2>Why This Matters</h2>
+                <p>Impact organizations deserve imagery that reflects their values. Communities deserve representation that honors their stories. Photographers deserve to work within ethical frameworks that support meaningful storytelling.</p>
+
+                <p>When you use Scatto, you're not just getting better photos, you're supporting better practices.</p>
+            </div>
+
+            <div class="contact">
+                <h2>Questions or Concerns?</h2>
+                <p>We're committed to transparency and continuous improvement.</p>
+                <p>Reach us at: <a href="mailto:ethics@scatto.photos">ethics@scatto.photos</a></p>
+            </div>
+        </div>
     </div>
 
-    <div class="section">
-        <h2>What We Promise</h2>
-        <p>Every image on Scatto comes from photographers who understand that authentic storytelling requires ethical practices. We don't just curate beautiful photos—we curate responsible ones.</p>
-
-        <p><strong style="color: var(--primary);">All photography is created with appropriate consent, community respect, and human dignity at the center.</strong></p>
-    </div>
-
-    <div class="section">
-        <h2>Our Standards</h2>
-        <p>We work with photographers who commit to:</p>
-        <ul>
-            <li>Obtaining proper consent from individuals and communities</li>
-            <li>Building genuine relationships, not extractive practices</li>
-            <li>Representing people with dignity and avoiding harmful stereotypes</li>
-            <li>Being transparent about how images will be used</li>
-            <li>Respecting cultural contexts and local customs</li>
-            <li>Never photographing identifiable minors without guardian consent</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Community First</h2>
-        <p>The communities in our photographs aren't just subjects—they're partners in storytelling. We maintain systems for:</p>
-        <ul>
-            <li>Community feedback and concerns</li>
-            <li>Image removal requests</li>
-            <li>Ongoing photographer accountability</li>
-            <li>Cultural sensitivity review</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Real-World Ethics</h2>
-        <p>We understand that ethical photography looks different in different contexts. A community meeting requires different consent than a public rally. Emergency documentation has different constraints than planned portraits.</p>
-
-        <p>Our approach is principled but practical—always prioritizing human dignity while recognizing the realities of documentary work.</p>
-    </div>
-
-    <div class="section">
-        <h2>Why This Matters</h2>
-        <p>Impact organizations deserve imagery that reflects their values. Communities deserve representation that honors their stories. Photographers deserve to work within ethical frameworks that support meaningful storytelling.</p>
-
-        <p>When you use Scatto, you're not just getting better photos—you're supporting better practices.</p>
-    </div>
-
-    <div class="contact">
-        <h2>Questions or Concerns?</h2>
-        <p>We're committed to transparency and continuous improvement.</p>
-        <p>Reach us at: <a href="<mailto:ethics@scatto.photos>">ethics@scatto.photos</a></p>
-    </div>
-</div>
-
-```
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Scatto</h3>
+                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#">Browse Photos</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Agency</h4>
+                <ul>
+                    <li><a href="#">Custom Projects</a></li>
+                    <li><a href="#">Photographer Network</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Get Quote</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">For Photographers</a></li>
+                    <li><a href="#">Ethics Guidelines</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Scatto Manifesto | Scatto Photos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+```
+    :root {
+        --primary: #4A5D73;
+        --secondary: #FEFCF8;
+        --accent: #D4A574;
+        --text: #1A2332;
+        --text-light: #64748B;
+        --border: #E2E8F0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--secondary);
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    .back-link {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 14px;
+        margin-bottom: 40px;
+        display: inline-block;
+        transition: color 0.3s;
+    }
+
+    .back-link:hover {
+        color: var(--primary);
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 40px;
+        text-align: center;
+        color: var(--accent);
+    }
+
+    .manifesto-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+
+    .manifesto-text p {
+        margin-bottom: 30px;
+    }
+
+    .beliefs {
+        margin: 40px 0;
+    }
+
+    .beliefs h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .beliefs ul {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    .beliefs li {
+        margin-bottom: 15px;
+        padding-left: 25px;
+        position: relative;
+        font-size: 1.1rem;
+    }
+
+    .beliefs li:before {
+        content: "◆";
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        font-size: 0.8em;
+        top: 0.3em;
+    }
+
+    .commitment {
+        font-size: 1.1rem;
+        margin: 40px 0;
+    }
+
+    .commitment h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .commitment ul {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    .commitment li {
+        margin-bottom: 15px;
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .commitment li:before {
+        content: "◆";
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        font-size: 0.8em;
+        top: 0.3em;
+    }
+
+    .closing {
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-align: center;
+        margin: 50px 0;
+        color: var(--primary);
+    }
+
+    .cta {
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border);
+    }
+
+    .cta h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .cta p {
+        color: var(--text-light);
+        margin-bottom: 30px;
+    }
+
+    .email-signup {
+        display: inline-flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .email-signup input {
+        padding: 12px 16px;
+        border: 2px solid var(--border);
+        border-radius: 8px;
+        font-size: 16px;
+        width: 250px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .email-signup input:focus {
+        outline: none;
+        border-color: var(--primary);
+    }
+
+    .email-signup button {
+        padding: 12px 24px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .email-signup button:hover {
+        background: #3A4D63;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+        }
+
+        .manifesto-text {
+            font-size: 1.1rem;
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        .email-signup {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .email-signup input {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+```
+
+</head>
+<body>
+<div class="container">
+<a href="/" class="back-link">← Back to Scatto Photos</a>
+
+```
+    <h1>The Scatto Manifesto</h1>
+
+    <div class="tagline">Real work deserves real photos.</div>
+
+    <div class="manifesto-text">
+        <p>Impact organizations are doing incredible work, but finding authentic, high-quality imagery that truly represents their mission is challenging and often expensive. Many are limited to generic stock photos, low-resolution images, or costly custom shoots that stretch budgets meant for program delivery.</p>
+
+        <p>Quality visual storytelling shouldn't be a luxury—it should be accessible to organizations creating real change. And as AI becomes the default solution for everything, we believe organizations making real impact deserve real storytelling through human eyes.</p>
+
+        <p>The eyes through which you tell your story determine how the world sees your impact. Authentic visuals don't just look better—they drive more donations, attract better partnerships, and build the trust that turns viewers into supporters.</p>
+    </div>
+
+    <div class="beliefs">
+        <h3>We believe:</h3>
+        <ul>
+            <li>Authentic stories require authentic imagery</li>
+            <li>Photographers embedded in impact work see what others miss</li>
+            <li>Communities deserve control over how they're represented</li>
+            <li>Fair compensation builds sustainable storytelling</li>
+        </ul>
+    </div>
+
+    <div class="commitment">
+        <h3>Our commitment:</h3>
+        <ul>
+            <li>Only photographers doing real impact work</li>
+            <li>Community consent, always</li>
+            <li>Photographer credit and fair revenue sharing</li>
+            <li>No AI, no exploitation, no generic diversity theater</li>
+        </ul>
+    </div>
+
+    <div class="closing">
+        The impact sector deserves better.<br>
+        So do the communities it serves.
+    </div>
+
+    <div class="cta">
+        <h3>Join the movement</h3>
+        <p>Be part of building a new standard for ethical impact photography.</p>
+
+        <form class="email-signup" netlify>
+            <input type="email" name="email" placeholder="Your email address" required>
+            <button type="submit">Join Waitlist</button>
+        </form>
+
+        <p style="font-size: 14px; color: #888;">
+            For photographers and organizations who believe in authentic storytelling.
+        </p>
+    </div>
+</div>
+
+```
+
+</body>
+</html>
+
+[Ethical standards](https://www.notion.so/Ethical-standards-203f2df662f780abb1aec6d6774db7f6?pvs=21)

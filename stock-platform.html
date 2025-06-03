@@ -901,7 +901,7 @@
         <section class="container">
             <div class="results-header">
                 <div class="results-info">
-                    Showing <strong>1</strong> result
+                    Showing <strong>2</strong> results
                 </div>
                 <div class="view-toggle">
                     <button class="view-btn active">Grid</button>
@@ -911,7 +911,7 @@
 
             <!-- Photo Grid -->
             <div class="photo-grid" id="photo-grid">
-                <!-- Your Real Photo -->
+                <!-- Your Real Photos -->
                 <div class="photo-card" onclick="openModal('photo1')">
                     <div class="photo-image">
                         <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1" alt="Hazrati Imam Complex, Uzbekistan" oncontextmenu="return false" ondragstart="return false">
@@ -929,6 +929,26 @@
                         <div class="photo-actions">
                             <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo1')">Express Interest</button>
                             <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo1')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo2')">
+                    <div class="photo-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg" alt="Namib Desert Dunes at Sunrise" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$10</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Namib Desert Dunes at Sunrise</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Namib Desert, Namibia</span>
+                            <span class="photo-category">Environment</span>
+                        </div>
+                        <p class="photo-description">Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo2')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">View Details</button>
                         </div>
                     </div>
                 </div>

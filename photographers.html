@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Photographers | Scatto Photos</title>
+    <meta name="description" content="Meet the photographers building Scatto's community of ethical impact storytellers from around the world.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4A5D73;
+            --secondary: #FEFCF8;
+            --accent: #D4A574;
+            --text: #1A2332;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(254, 252, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo-text:hover {
+            color: var(--accent);
+        }
+
+        .tagline-nav {
+            position: absolute;
+            left: 85px;
+            bottom: -8px;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3A4D63;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 140px 24px 100px;
+        }
+
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .page-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 32px;
+        }
+
+        .page-intro {
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .join-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+            transition: all 0.3s;
+        }
+
+        .join-link:hover {
+            color: var(--accent);
+            border-bottom-color: var(--primary);
+        }
+
+        .photographers-grid {
+            margin-bottom: 80px;
+        }
+
+        .photographer-card {
+            background: linear-gradient(135deg, #FEFCF8 0%, rgba(212, 165, 116, 0.03) 100%);
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+        }
+
+        .photographer-profile {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .photographer-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(26, 35, 50, 0.15);
+        }
+
+        .photographer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photographer-info h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .photographer-title {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .photographer-bio {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .photographer-specialties {
+            margin-bottom: 24px;
+        }
+
+        .photographer-specialties h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .photographer-specialties p {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .photographer-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn-gallery,
+        .photographer-actions .btn-primary {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        .btn-gallery {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-gallery:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .join-community {
+            background: var(--primary);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .join-community h2 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .join-community p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-join {
+            background: white;
+            color: var(--primary);
+            font-size: 18px;
+            padding: 16px 32px;
+        }
+
+        .btn-join:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: white;
+            padding: 60px 0 32px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #374151;
+            opacity: 0.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 42px;
+            }
+
+            .page-subtitle {
+                font-size: 20px;
+            }
+
+            .page-intro {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 120px 20px 80px;
+            }
+
+            .photographer-profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .photographer-image {
+                margin: 0 auto;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .join-community {
+                padding: 40px 24px;
+            }
+
+            .photographer-card {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A5D73;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3A4D63;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C8956A;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.6" />
+                            <stop offset="70%" style="stop-color:#4A5D73;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#4A5D73;stop-opacity:0.7" />
+                        </radialGradient>
+                    </defs>
+                    <g transform="translate(5, 5)">
+                        <circle cx="15" cy="12.5" r="12" fill="none" stroke="url(#primaryGradient)" stroke-width="1.2" opacity="0.5"/>
+                        <circle cx="15" cy="12.5" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.6"/>
+                        <circle cx="15" cy="12.5" r="5.5" fill="url(#irisGradient)"/>
+                        <circle cx="15" cy="12.5" r="2.2" fill="url(#primaryGradient)"/>
+                        <ellipse cx="16.2" cy="11.5" rx="0.7" ry="1" fill="#FEFCF8" opacity="0.7" transform="rotate(-20 16.2 11.5)"/>
+                        <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
+                    </g>
+                </svg>
+                <a href="/" class="logo-text">Scatto</a>
+                <div class="tagline-nav">mindful stories</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/manifesto">Our Manifesto</a></li>
+                <li><a href="/ethics">Our Ethics</a></li>
+                <li><a href="/our-photographers" class="active">Our Photographers</a></li>
+                <li><a href="#plans">Plans</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-outline">Sign In</a>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 12H5m0 0l7 7m-7-7l7-7"/>
+            </svg>
+            Back to Scatto Photos
+        </a>
+
+        <div class="page-header">
+            <h1 class="page-title">Our Photographers</h1>
+            <div class="page-subtitle">Building a community of ethical impact storytellers</div>
+            <p class="page-intro">
+                Meet the photographers building Scatto's global network of ethical impact storytellers. Each brings unique experience documenting meaningful work around the world.
+                <br><br>
+                <a href="#join" class="join-link">Interested in joining our community?</a>
+            </p>
+        </div>
+
+        <div class="photographers-grid">
+            <div class="photographer-card">
+                <div class="photographer-profile">
+                    <div class="photographer-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/ottavia-profile.jpg" alt="Ottavia Brussino" onerror="this.style.display='none'">
+                    </div>
+                    <div class="photographer-info">
+                        <h3>Ottavia Brussino</h3>
+                        <div class="photographer-title">Impact Photographer & Founder</div>
+                        <div class="photographer-bio">
+                            Impact professional who has worked with international organizations, social ventures, governments and NGOs across Europe, Africa and Central Asia. She built a passion for photography during her travels and work, recognizing the power of authentic visual storytelling to amplify the voices of communities creating change. Currently at the Paris branch of J-PAL, MIT-based impact evaluation center, she founded Scatto to address the critical need for ethical storytelling in the impact ecosystem.
+                        </div>
+                        <div class="photographer-specialties">
+                            <h4>Specialties</h4>
+                            <p>Impact evaluation, international development, community engagement, policy innovation</p>
+                        </div>
+                        <div class="photographer-specialties">
+                            <h4>Regions</h4>
+                            <p>Europe, Africa, Central Asia</p>
+                        </div>
+                        <div class="photographer-actions">
+                            <a href="/gallery?photographer=ottavia-brussino" class="btn btn-gallery">View Gallery</a>
+                            <a href="#join" class="btn btn-primary">Available for Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="join-community" id="join">
+            <h2>Join Our Community</h2>
+            <p>We're building a global network of photographers committed to ethical impact storytelling. Be part of creating a new standard for authentic, community-centered photography.</p>
+            <a href="#" class="btn btn-join">Join Beta Program</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Scatto</h3>
+                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/manifesto">Our Manifesto</a></li>
+                    <li><a href="/ethics">Our Ethics</a></li>
+                    <li><a href="/our-photographers">Our Photographers</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Join Us</h4>
+                <ul>
+                    <li><a href="#">For Photographers</a></li>
+                    <li><a href="#">For Organizations</a></li>
+                    <li><a href="#">Get Early Access</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+.btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -86,7 +95,7 @@
 
         .nav-center {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             align-items: center;
         }
 
@@ -94,11 +103,29 @@
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
         }
 
         .nav-center a:hover {
             color: var(--primary);
+        }
+
+        .nav-center a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-center a:hover:after {
+            width: 100%;
         }
 
         .nav-center .active {
@@ -731,12 +758,59 @@
         .footer {
             background: var(--text);
             color: white;
-            padding: 40px 0 20px;
-            text-align: center;
+            padding: 60px 0 32px;
+            margin-top: 100px;
         }
 
-        .footer p {
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
             opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #374151;
+            opacity: 0.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
         }
 
         /* Responsive */
@@ -810,12 +884,15 @@
                 <div class="tagline">mindful stories</div>
             </div>
             <div class="nav-center">
-                <a href="#" class="active">Browse Photos</a>
-                <a href="#">Custom Projects</a>
-                <a href="#">For Photographers</a>
+                <a href="/gallery" class="active">Gallery</a>
+                <a href="/custom-photography">Custom Photography</a>
+                <a href="/manifesto">Our Manifesto</a>
+                <a href="/ethics">Our Ethics</a>
+                <a href="#plans">Plans</a>
             </div>
             <div class="user-menu">
-                <a href="#" class="btn btn-primary" onclick="showInterestForm()">Get Early Access</a>
+                <a href="#" class="btn btn-outline">Sign In</a>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
             </div>
         </nav>
     </header>
@@ -936,57 +1013,4 @@
 
                 <div class="photo-card" onclick="openModal('photo2')">
                     <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg" alt="Namib Desert Dunes at Sunrise" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$10</div>
-                        <div class="photo-credit">Ottavia Brussino</div>
-                    </div>
-                    <div class="photo-info">
-                        <h3 class="photo-title">Namib Desert Dunes at Sunrise</h3>
-                        <div class="photo-meta">
-                            <span class="photo-location">Namib Desert, Namibia</span>
-                            <span class="photo-category">Environment</span>
-                        </div>
-                        <p class="photo-description">Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems.</p>
-                        <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo2')">Express Interest</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-card" onclick="openModal('photo3')">
-                    <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg" alt="Rural Road Life, Tanzania" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$11</div>
-                        <div class="photo-credit">Ottavia Brussino</div>
-                    </div>
-                    <div class="photo-info">
-                        <h3 class="photo-title">Rural Road Life, Tanzania</h3>
-                        <div class="photo-meta">
-                            <span class="photo-location">Iringa, Tanzania</span>
-                            <span class="photo-category">Community</span>
-                        </div>
-                        <p class="photo-description">Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility.</p>
-                        <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo3')">Express Interest</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- More photos coming soon... -->
-            </div>
-
-            <!-- Pagination -->
-            <div class="pagination">
-                <a href="#" class="page-btn active">1</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal" id="photoModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <div style="position: relative;">
-                <img id="modalImage" class="modal-image" src="" alt="" on
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2

@@ -1013,4 +1013,225 @@
 
                 <div class="photo-card" onclick="openModal('photo2')">
                     <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg" alt="Namib Desert Dunes at Sunrise" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$10</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Namib Desert Dunes at Sunrise</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Namib Desert, Namibia</span>
+                            <span class="photo-category">Environment</span>
+                        </div>
+                        <p class="photo-description">Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo2')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo3')">
+                    <div class="photo-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg" alt="Rural Road Life, Tanzania" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$11</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Rural Road Life, Tanzania</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Iringa, Tanzania</span>
+                            <span class="photo-category">Community</span>
+                        </div>
+                        <p class="photo-description">Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo3')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn active">1</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div style="position: relative;">
+                <img id="modalImage" class="modal-image" src="" alt="">
+                <div class="watermark-overlay">SCATTO PREVIEW</div>
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <h4>Location</h4>
+                        <p id="modalLocation"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Category</h4>
+                        <p id="modalCategory"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Photographer</h4>
+                        <p id="modalPhotographer"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>License</h4>
+                        <p id="modalLicense"></p>
+                    </div>
+                </div>
+                <p id="modalDescription" class="modal-description"></p>
+                <div class="license-info">
+                    <h4>License Information</h4>
+                    <p>Standard license includes commercial use, digital and print media, worldwide usage. Extended licensing available for exclusive campaigns.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-large btn-add-cart" onclick="expressInterest()">Express Interest</button>
+                    <button class="btn-large btn-preview" onclick="closeModal()">Continue Browsing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interest Form Modal -->
+    <div class="modal" id="interestModal">
+        <div class="interest-form">
+            <button class="modal-close" onclick="closeInterestForm()">×</button>
+            <h3>Express Interest</h3>
+            <p>Join our waitlist to get early access when we launch. We'll notify you about this photo and others like it.</p>
+            <form id="interestFormElement" netlify>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Organization</label>
+                    <input type="text" name="organization">
+                </div>
+                <div class="form-group">
+                    <label>Organization Type</label>
+                    <select name="org-type">
+                        <option value="">Select type</option>
+                        <option value="nonprofit">Nonprofit</option>
+                        <option value="foundation">Foundation</option>
+                        <option value="social-enterprise">Social Enterprise</option>
+                        <option value="research">Research Institution</option>
+                        <option value="government">Government Agency</option>
+                        <option value="media">Media/Journalism</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>How do you plan to use this image?</label>
+                    <textarea name="usage" placeholder="Website, annual report, social media, etc."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Join Waitlist</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        function openModal(photoId) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalLocation = document.getElementById('modalLocation');
+            const modalCategory = document.getElementById('modalCategory');
+            const modalPhotographer = document.getElementById('modalPhotographer');
+            const modalLicense = document.getElementById('modalLicense');
+            const modalDescription = document.getElementById('modalDescription');
+
+            // Photo data
+            const photos = {
+                'photo1': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1',
+                    title: 'Hazrati Imam Complex, Uzbekistan',
+                    location: 'Tashkent, Uzbekistan',
+                    category: 'Culture & Heritage',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'The Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual and architectural heart of Uzbekistan\'s capital city. This sacred space represents centuries of Islamic scholarship and cultural heritage.'
+                },
+                'photo2': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg',
+                    title: 'Namib Desert Dunes at Sunrise',
+                    location: 'Namib Desert, Namibia',
+                    category: 'Environment & Sustainability',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world\'s oldest desert ecosystems and the natural beauty of southern Africa.'
+                },
+                'photo3': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg',
+                    title: 'Rural Road Life, Tanzania',
+                    location: 'Iringa, Tanzania',
+                    category: 'Community Engagement',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility patterns in East Africa.'
+                }
+            };
+
+            const photo = photos[photoId];
+            if (photo) {
+                modalImage.src = photo.src;
+                modalImage.alt = photo.title;
+                modalTitle.textContent = photo.title;
+                modalLocation.textContent = photo.location;
+                modalCategory.textContent = photo.category;
+                modalPhotographer.textContent = photo.photographer;
+                modalLicense.textContent = photo.license;
+                modalDescription.textContent = photo.description;
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').classList.remove('active');
+        }
+
+        function expressInterest(photoId = null) {
+            closeModal();
+            document.getElementById('interestModal').classList.add('active');
+        }
+
+        function closeInterestForm() {
+            document.getElementById('interestModal').classList.remove('active');
+        }
+
+        function showInterestForm() {
+            document.getElementById('interestModal').classList.add('active');
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Form submission
+        document.getElementById('interestFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Show success message
+            document.querySelector('.interest-form').innerHTML = `
+                <div class="form-success">
+                    <h3>Thanks for your interest!</h3>
+                    <p>We'll notify you when Scatto launches and this photo becomes available.</p>
+                    <button onclick="closeInterestForm()" class="form-submit">Continue Browsing</button>
+                </div>
+            `;
+        });
+    </script>

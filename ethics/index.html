@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active:after {
+            width: 100%;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,6 +75,12 @@
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 1px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo-text:hover {
+            color: var(--accent);
         }
 
         .tagline-nav {
@@ -427,14 +440,15 @@
                         <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
                     </g>
                 </svg>
-                <div class="logo-text">Scatto</div>
+                <a href="/" class="logo-text">Scatto</a>
                 <div class="tagline-nav">mindful stories</div>
             </div>
             <ul class="nav-links">
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#agency">Agency</a></li>
-                <li><a href="#photographers">For Photographers</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/manifesto">Our Manifesto</a></li>
+                <li><a href="/ethics" class="active">Our Ethics</a></li>
+                <li><a href="/our-photographers">Our Photographers</a></li>
+                <li><a href="#plans">Plans</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#" class="btn btn-outline">Sign In</a>

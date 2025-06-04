@@ -1,4 +1,4 @@
-.btn-outline {
+        .btn-outline {
             background: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
@@ -1219,6 +1219,48 @@
         document.addEventListener('click', function(e) {
             if (e.target.classList.contains('modal')) {
                 e.target.classList.remove('active');
+            }
+        });
+
+        // Photographer filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const photographer = urlParams.get('photographer');
+            
+            if (photographer) {
+                // Convert URL parameter back to readable name (ottavia-brussino -> ottavia brussino)
+                const photographerName = photographer.replace('-', ' ');
+                
+                // Hide photos not by this photographer
+                const photoCards = document.querySelectorAll('.photo-card');
+                let visiblePhotos = 0;
+                
+                photoCards.forEach(card => {
+                    const credit = card.querySelector('.photo-credit');
+                    if (credit && credit.textContent.toLowerCase().includes(photographerName.toLowerCase())) {
+                        // Show this photo
+                        card.style.display = 'block';
+                        visiblePhotos++;
+                    } else {
+                        // Hide this photo
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Update results count
+                const resultsInfo = document.querySelector('.results-info strong');
+                if (resultsInfo) {
+                    resultsInfo.textContent = visiblePhotos;
+                }
+                
+                // Update page title to show filtered view
+                const searchHeader = document.querySelector('.search-header h1');
+                if (searchHeader) {
+                    const capitalizedName = photographerName.split(' ').map(word => 
+                        word.charAt(0).toUpperCase() + word.slice(1)
+                    ).join(' ');
+                    searchHeader.textContent = `Photos by ${capitalizedName}`;
+                }
             }
         });
 

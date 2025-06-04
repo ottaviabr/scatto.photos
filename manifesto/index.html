@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+.nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active:after {
+            width: 100%;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,6 +75,12 @@
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 1px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo-text:hover {
+            color: var(--accent);
         }
 
         .tagline-nav {
@@ -497,13 +510,13 @@
                         <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
                     </g>
                 </svg>
-                <div class="logo-text">Scatto</div>
+                <a href="/" class="logo-text">Scatto</a>
                 <div class="tagline-nav">mindful stories</div>
             </div>
             <ul class="nav-links">
                 <li><a href="/gallery">Gallery</a></li>
                 <li><a href="/custom-photography">Custom Photography</a></li>
-                <li><a href="/manifesto">Our Manifesto</a></li>
+                <li><a href="/manifesto" class="active">Our Manifesto</a></li>
                 <li><a href="/ethics">Our Ethics</a></li>
                 <li><a href="#plans">Plans</a></li>
             </ul>
@@ -516,13 +529,6 @@
 
     <!-- Main Content -->
     <div class="container">
-        <a href="/" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 12H5m0 0l7 7m-7-7l7-7"/>
-            </svg>
-            Back to Scatto Photos
-        </a>
-
         <div class="manifesto-header">
             <h1 class="manifesto-title">Our Manifesto</h1>
             <div class="manifesto-subtitle">Real work deserves real photos.</div>

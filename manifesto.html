@@ -1,11 +1,4 @@
-.nav-links a.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .nav-links a.active:after {
-            width: 100%;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -130,6 +123,15 @@
             width: 100%;
         }
 
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active:after {
+            width: 100%;
+        }
+
         .nav-cta {
             display: flex;
             gap: 16px;
@@ -217,6 +219,14 @@
             margin: 0 auto;
         }
 
+        .scatto-meaning {
+            font-size: 20px;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
         .manifesto-content {
             margin-bottom: 80px;
         }
@@ -240,10 +250,10 @@
         }
 
         .beliefs h3, .commitment h3 {
-            font-size: 24px;
-            margin-bottom: 28px;
-            font-weight: 700;
-            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 24px;
+            font-weight: 600;
+            color: var(--accent);
         }
 
         .beliefs ul, .commitment ul {
@@ -252,11 +262,11 @@
         }
 
         .beliefs li, .commitment li {
-            margin-bottom: 20px;
-            padding-left: 32px;
+            margin-bottom: 16px;
+            padding-left: 28px;
             position: relative;
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         .beliefs li:before, .commitment li:before {
@@ -270,11 +280,11 @@
         }
 
         .closing {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
             text-align: center;
             margin: 80px 0;
-            color: var(--primary);
+            color: var(--accent);
             line-height: 1.4;
             padding: 40px;
             background: #F5E6D3;
@@ -287,9 +297,9 @@
         }
 
         .story-text p {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 32px;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 28px;
         }
 
         .cta {
@@ -362,6 +372,7 @@
             font-size: 14px;
             opacity: 0.7;
             margin-top: 20px;
+            font-style: italic;
         }
 
         /* Footer */
@@ -437,6 +448,10 @@
                 font-size: 18px;
             }
 
+            .scatto-meaning {
+                font-size: 18px;
+            }
+
             .manifesto-text {
                 font-size: 16px;
             }
@@ -474,7 +489,7 @@
             }
 
             .closing {
-                font-size: 24px;
+                font-size: 20px;
                 padding: 30px 24px;
             }
         }
@@ -532,8 +547,11 @@
         <div class="manifesto-header">
             <h1 class="manifesto-title">Our Manifesto</h1>
             <div class="manifesto-subtitle">Real work deserves real photos.</div>
+            <p class="scatto-meaning">
+                Scatto means "snapshot" in Italian, but also a jolt, a sudden leap forward.
+            </p>
             <p class="manifesto-intro">
-                In a world where AI handles operations, we ensure visual storytelling stays human, providing authentic imagery that truly represents the incredible work being done by impact organizations worldwide.
+                That's what we stand for, shifting how impact is seen and shared. In a world where AI handles operations, we ensure visual storytelling stays human, providing authentic imagery that truly represents the incredible work being done by impact organizations worldwide.
             </p>
         </div>
 
@@ -576,13 +594,13 @@
                 <div class="story-text">
                     <p>After 7+ years working across the impact ecosystem, from international organizations to foundations, social ventures, and academia, I've seen this problem everywhere. Currently at the Paris-based office of J-PAL, a MIT-based impact evaluation center that aims to reduce poverty by ensuring policy is informed by scientific evidence, I've witnessed firsthand how the right visual story can amplify impact.</p>
                     
-                    <p>Years of struggling to find authentic, ethically-sourced imagery for my own work led me to build Scatto: a solution to connect organizations doing real change with photographers who understand their mission.</p>
+                    <p>Years of struggling to find authentic, ethically-sourced imagery for my own work led me to build Scatto, a solution to connect organizations doing real change with photographers who understand their mission.</p>
                     
                     <p style="margin-top: 40px; font-style: italic; text-align: right; color: var(--primary); font-weight: 600;">— Ottavia Brussino, Founder</p>
                 </div>
             </div>
 
-            <div class="cta">
+            <div id="plans" class="cta">
                 <h3>Join the movement</h3>
                 <p>Be part of building a new standard for ethical impact photography.</p>
 
@@ -592,7 +610,7 @@
                 </form>
 
                 <p class="cta-note">
-                    For photographers and organizations who believe in authentic storytelling.
+                    For people who believe in authentic storytelling.
                 </p>
             </div>
         </div>
@@ -609,10 +627,11 @@
                 <h4>Platform</h4>
                 <ul>
                     <li><a href="/gallery">Gallery</a></li>
-                    <li><a href="/custom-photography">Custom Photography</a></li>
-                    <li><a href="#plans">Plans</a></li>
                     <li><a href="/manifesto">Our Manifesto</a></li>
                     <li><a href="/ethics">Our Ethics</a></li>
+                    <li><a href="/photographers">Our Photographers</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="/custom-photography">Custom Photography</a></li>
                 </ul>
             </div>
             <div class="footer-links">

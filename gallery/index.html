@@ -1,13 +1,4 @@
-.btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,6 +51,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
         }
 
         .logo-container {
@@ -79,6 +74,12 @@
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 1px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo-text:hover {
+            color: var(--accent);
         }
 
         .tagline {
@@ -93,13 +94,13 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .nav-center {
+        .nav-links {
             display: flex;
             gap: 40px;
-            align-items: center;
+            list-style: none;
         }
 
-        .nav-center a {
+        .nav-links a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
@@ -109,11 +110,11 @@
             position: relative;
         }
 
-        .nav-center a:hover {
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-center a:after {
+        .nav-links a:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -124,19 +125,17 @@
             transition: width 0.3s ease;
         }
 
-        .nav-center a:hover:after {
+        .nav-links a:hover:after {
             width: 100%;
         }
 
-        .nav-center .active {
+        .nav-links a.active {
             color: var(--primary);
             font-weight: 600;
         }
 
-        .user-menu {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+        .nav-links a.active:after {
+            width: 100%;
         }
 
         .btn {
@@ -158,6 +157,17 @@
         .btn-primary:hover {
             background: #3A4D63;
             transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
         }
 
         /* Main Content */
@@ -847,13 +857,22 @@
             .modal-actions {
                 flex-direction: column;
             }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav container">
+        <nav class="nav">
             <div class="logo-container">
                 <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -880,20 +899,16 @@
                         <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
                     </g>
                 </svg>
-                <div class="logo-text">Scatto</div>
+                <a href="index.html" class="logo-text">Scatto</a>
                 <div class="tagline">mindful stories</div>
             </div>
-            <div class="nav-center">
-                <a href="/gallery" class="active">Gallery</a>
-                <a href="/manifesto">Our Manifesto</a>
-                <a href="/ethics">Our Ethics</a>
-                <a href="/photographers">Our Photographers</a>
-                <a href="#plans">Plans</a>
-            </div>
-            <div class="user-menu">
-                <a href="#" class="btn btn-outline">Sign In</a>
-                <a href="#" class="btn btn-primary">Start Free Trial</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="gallery/" class="active">Gallery</a></li>
+                <li><a href="manifesto.html">Our Manifesto</a></li>
+                <li><a href="ethics.html">Our Ethics</a></li>
+                <li><a href="photographers/">Our Photographers</a></li>
+                <li><a href="#plans">Plans</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -920,49 +935,6 @@
                 </div>
 
                 <div class="filters">
-                    <div class="filter-group">
-                        <select class="filter-select" id="category-filter">
-                            <option value="">All Categories</option>
-                            <option value="community">Community Engagement</option>
-                            <option value="healthcare">Healthcare & Medical</option>
-                            <option value="education">Education & Learning</option>
-                            <option value="environment">Environment & Sustainability</option>
-                            <option value="economic">Economic Development</option>
-                            <option value="agriculture">Agriculture & Food Security</option>
-                            <option value="culture">Culture & Heritage</option>
-                            <option value="human-rights">Human Rights & Social Justice</option>
-                            <option value="migration">Migration & Displacement</option>
-                            <option value="governance">Governance & Democracy</option>
-                            <option value="peace">Peace & Conflict Resolution</option>
-                            <option value="women">Women's Empowerment</option>
-                            <option value="youth">Youth & Children</option>
-                            <option value="humanitarian">Humanitarian & Relief</option>
-                            <option value="arts">Arts & Creativity</option>
-                            <option value="mental-health">Mental Health & Wellbeing</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <select class="filter-select" id="continent-filter">
-                            <option value="">All Continents</option>
-                            <option value="africa">Africa</option>
-                            <option value="asia">Asia</option>
-                            <option value="europe">Europe</option>
-                            <option value="north-america">North America</option>
-                            <option value="south-america">South America</option>
-                            <option value="oceania">Oceania</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <select class="filter-select" id="country-filter">
-                            <option value="">All Countries</option>
-                            <option value="tanzania">Tanzania</option>
-                            <option value="uzbekistan">Uzbekistan</option>
-                            <option value="namibia">Namibia</option>
-                            <option value="india">India</option>
-                            <option value="peru">Peru</option>
-                            <option value="bangladesh">Bangladesh</option>
-                        </select>
-                    </div>
                     <div class="filter-group">
                         <select class="filter-select" id="license-filter">
                             <option value="">All Licenses</option>
@@ -1141,6 +1113,40 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Scatto</h3>
+                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="gallery/">Gallery</a></li>
+                    <li><a href="manifesto.html">Our Manifesto</a></li>
+                    <li><a href="ethics.html">Our Ethics</a></li>
+                    <li><a href="photographers/">Our Photographers</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Join Us</h4>
+                <ul>
+                    <li><a href="photographers/">For Photographers</a></li>
+                    <li><a href="#">For Organizations</a></li>
+                    <li><a href="#">Get Early Access</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
+        </div>
+        </div>
+    </footer>
+
     <script>
         // Modal functionality
         function openModal(photoId) {
@@ -1277,3 +1283,48 @@
             `;
         });
     </script>
+</body>
+</html>filter-select" id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="community">Community Engagement</option>
+                            <option value="healthcare">Healthcare & Medical</option>
+                            <option value="education">Education & Learning</option>
+                            <option value="environment">Environment & Sustainability</option>
+                            <option value="economic">Economic Development</option>
+                            <option value="agriculture">Agriculture & Food Security</option>
+                            <option value="culture">Culture & Heritage</option>
+                            <option value="human-rights">Human Rights & Social Justice</option>
+                            <option value="migration">Migration & Displacement</option>
+                            <option value="governance">Governance & Democracy</option>
+                            <option value="peace">Peace & Conflict Resolution</option>
+                            <option value="women">Women's Empowerment</option>
+                            <option value="youth">Youth & Children</option>
+                            <option value="humanitarian">Humanitarian & Relief</option>
+                            <option value="arts">Arts & Creativity</option>
+                            <option value="mental-health">Mental Health & Wellbeing</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select" id="continent-filter">
+                            <option value="">All Continents</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="north-america">North America</option>
+                            <option value="south-america">South America</option>
+                            <option value="oceania">Oceania</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select" id="country-filter">
+                            <option value="">All Countries</option>
+                            <option value="tanzania">Tanzania</option>
+                            <option value="uzbekistan">Uzbekistan</option>
+                            <option value="namibia">Namibia</option>
+                            <option value="india">India</option>
+                            <option value="peru">Peru</option>
+                            <option value="bangladesh">Bangladesh</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="

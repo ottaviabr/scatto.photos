@@ -138,38 +138,6 @@
             width: 100%;
         }
 
-        .btn {
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #3A4D63;
-            transform: translateY(-1px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
         /* Main Content */
         .main {
             padding-top: 100px;
@@ -529,27 +497,6 @@
             height: 400px;
             object-fit: cover;
             position: relative;
-        }
-
-        .modal-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(212, 165, 116, 0.1) 35%, 
-                rgba(212, 165, 116, 0.2) 40%, 
-                transparent 45%,
-                transparent 55%,
-                rgba(212, 165, 116, 0.1) 60%,
-                rgba(212, 165, 116, 0.2) 65%,
-                transparent 70%
-            );
-            background-size: 60px 60px;
-            pointer-events: none;
         }
 
         .watermark-overlay {
@@ -936,6 +883,49 @@
 
                 <div class="filters">
                     <div class="filter-group">
+                        <select class="filter-select" id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="community">Community Engagement</option>
+                            <option value="healthcare">Healthcare & Medical</option>
+                            <option value="education">Education & Learning</option>
+                            <option value="environment">Environment & Sustainability</option>
+                            <option value="economic">Economic Development</option>
+                            <option value="agriculture">Agriculture & Food Security</option>
+                            <option value="culture">Culture & Heritage</option>
+                            <option value="human-rights">Human Rights & Social Justice</option>
+                            <option value="migration">Migration & Displacement</option>
+                            <option value="governance">Governance & Democracy</option>
+                            <option value="peace">Peace & Conflict Resolution</option>
+                            <option value="women">Women's Empowerment</option>
+                            <option value="youth">Youth & Children</option>
+                            <option value="humanitarian">Humanitarian & Relief</option>
+                            <option value="arts">Arts & Creativity</option>
+                            <option value="mental-health">Mental Health & Wellbeing</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select" id="continent-filter">
+                            <option value="">All Continents</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="north-america">North America</option>
+                            <option value="south-america">South America</option>
+                            <option value="oceania">Oceania</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select" id="country-filter">
+                            <option value="">All Countries</option>
+                            <option value="tanzania">Tanzania</option>
+                            <option value="uzbekistan">Uzbekistan</option>
+                            <option value="namibia">Namibia</option>
+                            <option value="india">India</option>
+                            <option value="peru">Peru</option>
+                            <option value="bangladesh">Bangladesh</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
                         <select class="filter-select" id="license-filter">
                             <option value="">All Licenses</option>
                             <option value="standard">Standard License</option>
@@ -951,7 +941,7 @@
         <section class="container">
             <div class="results-header">
                 <div class="results-info">
-                    Showing <strong>4</strong> results
+                    Showing <strong>3</strong> results
                 </div>
                 <div class="view-toggle">
                     <button class="view-btn active">Grid</button>
@@ -961,7 +951,6 @@
 
             <!-- Photo Grid -->
             <div class="photo-grid" id="photo-grid">
-                <!-- Your Real Photos -->
                 <div class="photo-card" onclick="openModal('photo1')">
                     <div class="photo-image">
                         <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1" alt="Hazrati Imam Complex, Uzbekistan" oncontextmenu="return false" ondragstart="return false">
@@ -1117,33 +1106,33 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-            <div class="footer-brand">
-                <h3>Scatto</h3>
-                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+                <div class="footer-brand">
+                    <h3>Scatto</h3>
+                    <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="gallery/">Gallery</a></li>
+                        <li><a href="manifesto.html">Our Manifesto</a></li>
+                        <li><a href="ethics.html">Our Ethics</a></li>
+                        <li><a href="photographers/">Our Photographers</a></li>
+                        <li><a href="#plans">Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Join Us</h4>
+                    <ul>
+                        <li><a href="photographers/">For Photographers</a></li>
+                        <li><a href="#">For Organizations</a></li>
+                        <li><a href="#">Get Early Access</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Platform</h4>
-                <ul>
-                    <li><a href="gallery/">Gallery</a></li>
-                    <li><a href="manifesto.html">Our Manifesto</a></li>
-                    <li><a href="ethics.html">Our Ethics</a></li>
-                    <li><a href="photographers/">Our Photographers</a></li>
-                    <li><a href="#plans">Plans</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
             </div>
-            <div class="footer-links">
-                <h4>Join Us</h4>
-                <ul>
-                    <li><a href="photographers/">For Photographers</a></li>
-                    <li><a href="#">For Organizations</a></li>
-                    <li><a href="#">Get Early Access</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
-        </div>
         </div>
     </footer>
 
@@ -1217,10 +1206,6 @@
             document.getElementById('interestModal').classList.remove('active');
         }
 
-        function showInterestForm() {
-            document.getElementById('interestModal').classList.add('active');
-        }
-
         // Close modals when clicking outside
         document.addEventListener('click', function(e) {
             if (e.target.classList.contains('modal')) {
@@ -1284,47 +1269,4 @@
         });
     </script>
 </body>
-</html>filter-select" id="category-filter">
-                            <option value="">All Categories</option>
-                            <option value="community">Community Engagement</option>
-                            <option value="healthcare">Healthcare & Medical</option>
-                            <option value="education">Education & Learning</option>
-                            <option value="environment">Environment & Sustainability</option>
-                            <option value="economic">Economic Development</option>
-                            <option value="agriculture">Agriculture & Food Security</option>
-                            <option value="culture">Culture & Heritage</option>
-                            <option value="human-rights">Human Rights & Social Justice</option>
-                            <option value="migration">Migration & Displacement</option>
-                            <option value="governance">Governance & Democracy</option>
-                            <option value="peace">Peace & Conflict Resolution</option>
-                            <option value="women">Women's Empowerment</option>
-                            <option value="youth">Youth & Children</option>
-                            <option value="humanitarian">Humanitarian & Relief</option>
-                            <option value="arts">Arts & Creativity</option>
-                            <option value="mental-health">Mental Health & Wellbeing</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <select class="filter-select" id="continent-filter">
-                            <option value="">All Continents</option>
-                            <option value="africa">Africa</option>
-                            <option value="asia">Asia</option>
-                            <option value="europe">Europe</option>
-                            <option value="north-america">North America</option>
-                            <option value="south-america">South America</option>
-                            <option value="oceania">Oceania</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <select class="filter-select" id="country-filter">
-                            <option value="">All Countries</option>
-                            <option value="tanzania">Tanzania</option>
-                            <option value="uzbekistan">Uzbekistan</option>
-                            <option value="namibia">Namibia</option>
-                            <option value="india">India</option>
-                            <option value="peru">Peru</option>
-                            <option value="bangladesh">Bangladesh</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <select class="
+</html>

@@ -1,13 +1,4 @@
-.btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,6 +51,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
         }
 
         .logo-container {
@@ -79,6 +74,12 @@
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 1px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo-text:hover {
+            color: var(--accent);
         }
 
         .tagline {
@@ -93,13 +94,13 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .nav-center {
+        .nav-links {
             display: flex;
             gap: 40px;
-            align-items: center;
+            list-style: none;
         }
 
-        .nav-center a {
+        .nav-links a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
@@ -109,11 +110,11 @@
             position: relative;
         }
 
-        .nav-center a:hover {
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-center a:after {
+        .nav-links a:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -124,40 +125,17 @@
             transition: width 0.3s ease;
         }
 
-        .nav-center a:hover:after {
+        .nav-links a:hover:after {
             width: 100%;
         }
 
-        .nav-center .active {
+        .nav-links a.active {
             color: var(--primary);
             font-weight: 600;
         }
 
-        .user-menu {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #3A4D63;
-            transform: translateY(-1px);
+        .nav-links a.active:after {
+            width: 100%;
         }
 
         /* Main Content */
@@ -521,27 +499,6 @@
             position: relative;
         }
 
-        .modal-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(212, 165, 116, 0.1) 35%, 
-                rgba(212, 165, 116, 0.2) 40%, 
-                transparent 45%,
-                transparent 55%,
-                rgba(212, 165, 116, 0.1) 60%,
-                rgba(212, 165, 116, 0.2) 65%,
-                transparent 70%
-            );
-            background-size: 60px 60px;
-            pointer-events: none;
-        }
-
         .watermark-overlay {
             position: absolute;
             top: 50%;
@@ -847,13 +804,22 @@
             .modal-actions {
                 flex-direction: column;
             }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav container">
+        <nav class="nav">
             <div class="logo-container">
                 <svg class="logo-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -880,20 +846,16 @@
                         <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
                     </g>
                 </svg>
-                <div class="logo-text">Scatto</div>
+                <a href="index.html" class="logo-text">Scatto</a>
                 <div class="tagline">mindful stories</div>
             </div>
-            <div class="nav-center">
-                <a href="/gallery" class="active">Gallery</a>
-                <a href="/custom-photography">Custom Photography</a>
-                <a href="/manifesto">Our Manifesto</a>
-                <a href="/ethics">Our Ethics</a>
-                <a href="#plans">Plans</a>
-            </div>
-            <div class="user-menu">
-                <a href="#" class="btn btn-outline">Sign In</a>
-                <a href="#" class="btn btn-primary">Start Free Trial</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="gallery/" class="active">Gallery</a></li>
+                <li><a href="manifesto.html">Our Manifesto</a></li>
+                <li><a href="ethics.html">Our Ethics</a></li>
+                <li><a href="photographers/">Our Photographers</a></li>
+                <li><a href="#plans">Plans</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -979,7 +941,7 @@
         <section class="container">
             <div class="results-header">
                 <div class="results-info">
-                    Showing <strong>4</strong> results
+                    Showing <strong>3</strong> results
                 </div>
                 <div class="view-toggle">
                     <button class="view-btn active">Grid</button>
@@ -989,7 +951,6 @@
 
             <!-- Photo Grid -->
             <div class="photo-grid" id="photo-grid">
-                <!-- Your Real Photos -->
                 <div class="photo-card" onclick="openModal('photo1')">
                     <div class="photo-image">
                         <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1" alt="Hazrati Imam Complex, Uzbekistan" oncontextmenu="return false" ondragstart="return false">
@@ -1013,4 +974,299 @@
 
                 <div class="photo-card" onclick="openModal('photo2')">
                     <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg" alt="Namib Desert Dunes at Sunrise" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$10</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Namib Desert Dunes at Sunrise</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Namib Desert, Namibia</span>
+                            <span class="photo-category">Environment</span>
+                        </div>
+                        <p class="photo-description">Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo2')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" onclick="openModal('photo3')">
+                    <div class="photo-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg" alt="Rural Road Life, Tanzania" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">$11</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Rural Road Life, Tanzania</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Iringa, Tanzania</span>
+                            <span class="photo-category">Community</span>
+                        </div>
+                        <p class="photo-description">Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo3')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn active">1</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div style="position: relative;">
+                <img id="modalImage" class="modal-image" src="" alt="">
+                <div class="watermark-overlay">SCATTO PREVIEW</div>
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <h4>Location</h4>
+                        <p id="modalLocation"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Category</h4>
+                        <p id="modalCategory"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Photographer</h4>
+                        <p id="modalPhotographer"></p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>License</h4>
+                        <p id="modalLicense"></p>
+                    </div>
+                </div>
+                <p id="modalDescription" class="modal-description"></p>
+                <div class="license-info">
+                    <h4>License Information</h4>
+                    <p>Standard license includes commercial use, digital and print media, worldwide usage. Extended licensing available for exclusive campaigns.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-large btn-add-cart" onclick="expressInterest()">Express Interest</button>
+                    <button class="btn-large btn-preview" onclick="closeModal()">Continue Browsing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interest Form Modal -->
+    <div class="modal" id="interestModal">
+        <div class="interest-form">
+            <button class="modal-close" onclick="closeInterestForm()">×</button>
+            <h3>Express Interest</h3>
+            <p>Join our waitlist to get early access when we launch. We'll notify you about this photo and others like it.</p>
+            <form id="interestFormElement" netlify>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Organization</label>
+                    <input type="text" name="organization">
+                </div>
+                <div class="form-group">
+                    <label>Organization Type</label>
+                    <select name="org-type">
+                        <option value="">Select type</option>
+                        <option value="nonprofit">Nonprofit</option>
+                        <option value="foundation">Foundation</option>
+                        <option value="social-enterprise">Social Enterprise</option>
+                        <option value="research">Research Institution</option>
+                        <option value="government">Government Agency</option>
+                        <option value="media">Media/Journalism</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>How do you plan to use this image?</label>
+                    <textarea name="usage" placeholder="Website, annual report, social media, etc."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Join Waitlist</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Scatto</h3>
+                    <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="gallery/">Gallery</a></li>
+                        <li><a href="manifesto.html">Our Manifesto</a></li>
+                        <li><a href="ethics.html">Our Ethics</a></li>
+                        <li><a href="photographers/">Our Photographers</a></li>
+                        <li><a href="#plans">Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Join Us</h4>
+                    <ul>
+                        <li><a href="photographers/">For Photographers</a></li>
+                        <li><a href="#">For Organizations</a></li>
+                        <li><a href="#">Get Early Access</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Scatto. Human storytelling for lasting impact.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functionality
+        function openModal(photoId) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalLocation = document.getElementById('modalLocation');
+            const modalCategory = document.getElementById('modalCategory');
+            const modalPhotographer = document.getElementById('modalPhotographer');
+            const modalLicense = document.getElementById('modalLicense');
+            const modalDescription = document.getElementById('modalDescription');
+
+            // Photo data
+            const photos = {
+                'photo1': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1',
+                    title: 'Hazrati Imam Complex, Uzbekistan',
+                    location: 'Tashkent, Uzbekistan',
+                    category: 'Culture & Heritage',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'The Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual and architectural heart of Uzbekistan\'s capital city. This sacred space represents centuries of Islamic scholarship and cultural heritage.'
+                },
+                'photo2': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg',
+                    title: 'Namib Desert Dunes at Sunrise',
+                    location: 'Namib Desert, Namibia',
+                    category: 'Environment & Sustainability',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world\'s oldest desert ecosystems and the natural beauty of southern Africa.'
+                },
+                'photo3': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg',
+                    title: 'Rural Road Life, Tanzania',
+                    location: 'Iringa, Tanzania',
+                    category: 'Community Engagement',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility patterns in East Africa.'
+                }
+            };
+
+            const photo = photos[photoId];
+            if (photo) {
+                modalImage.src = photo.src;
+                modalImage.alt = photo.title;
+                modalTitle.textContent = photo.title;
+                modalLocation.textContent = photo.location;
+                modalCategory.textContent = photo.category;
+                modalPhotographer.textContent = photo.photographer;
+                modalLicense.textContent = photo.license;
+                modalDescription.textContent = photo.description;
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').classList.remove('active');
+        }
+
+        function expressInterest(photoId = null) {
+            closeModal();
+            document.getElementById('interestModal').classList.add('active');
+        }
+
+        function closeInterestForm() {
+            document.getElementById('interestModal').classList.remove('active');
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Photographer filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const photographer = urlParams.get('photographer');
+            
+            if (photographer) {
+                // Convert URL parameter back to readable name (ottavia-brussino -> ottavia brussino)
+                const photographerName = photographer.replace('-', ' ');
+                
+                // Hide photos not by this photographer
+                const photoCards = document.querySelectorAll('.photo-card');
+                let visiblePhotos = 0;
+                
+                photoCards.forEach(card => {
+                    const credit = card.querySelector('.photo-credit');
+                    if (credit && credit.textContent.toLowerCase().includes(photographerName.toLowerCase())) {
+                        // Show this photo
+                        card.style.display = 'block';
+                        visiblePhotos++;
+                    } else {
+                        // Hide this photo
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Update results count
+                const resultsInfo = document.querySelector('.results-info strong');
+                if (resultsInfo) {
+                    resultsInfo.textContent = visiblePhotos;
+                }
+                
+                // Update page title to show filtered view
+                const searchHeader = document.querySelector('.search-header h1');
+                if (searchHeader) {
+                    const capitalizedName = photographerName.split(' ').map(word => 
+                        word.charAt(0).toUpperCase() + word.slice(1)
+                    ).join(' ');
+                    searchHeader.textContent = `Photos by ${capitalizedName}`;
+                }
+            }
+        });
+
+        // Form submission
+        document.getElementById('interestFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Show success message
+            document.querySelector('.interest-form').innerHTML = `
+                <div class="form-success">
+                    <h3>Thanks for your interest!</h3>
+                    <p>We'll notify you when Scatto launches and this photo becomes available.</p>
+                    <button onclick="closeInterestForm()" class="form-submit">Continue Browsing</button>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

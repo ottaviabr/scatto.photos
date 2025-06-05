@@ -44,27 +44,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
+            padding: 12px 0;
+            min-height: 70px;
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             position: relative;
         }
 
         .logo-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
         }
 
         .logo-text {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 1px;
@@ -78,19 +80,19 @@
 
         .tagline-nav {
             position: absolute;
-            left: 85px;
+            left: 70px;
             bottom: -6px;
             color: var(--accent);
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 300;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: lowercase;
             font-family: 'Inter', sans-serif;
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             list-style: none;
         }
 
@@ -132,6 +134,23 @@
             width: 100%;
         }
 
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
         .btn {
             padding: 12px 24px;
             border-radius: 8px;
@@ -140,6 +159,8 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            display: inline-block;
+            text-align: center;
         }
 
         .btn-primary {
@@ -167,14 +188,14 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 140px 24px 100px;
+            padding: 120px 20px 80px;
         }
 
         .back-link {
             color: var(--text-light);
             text-decoration: none;
             font-size: 14px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -188,43 +209,43 @@
 
         .ethics-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .ethics-title {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: var(--primary);
             line-height: 1.2;
         }
 
         .ethics-intro {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             color: var(--accent);
             line-height: 1.4;
         }
 
         .ethics-content {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .section h2 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 600;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             color: var(--primary);
         }
 
         .section p {
             font-size: 18px;
             line-height: 1.8;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .section p strong {
@@ -234,14 +255,14 @@
 
         .section ul {
             list-style: none;
-            margin: 32px 0;
+            margin: 24px 0;
         }
 
         .section li {
-            margin-bottom: 20px;
-            padding-left: 32px;
+            margin-bottom: 16px;
+            padding-left: 28px;
             position: relative;
-            font-size: 18px;
+            font-size: 17px;
             line-height: 1.6;
         }
 
@@ -251,7 +272,7 @@
             font-weight: bold;
             position: absolute;
             left: 0;
-            font-size: 16px;
+            font-size: 14px;
             top: 2px;
         }
 
@@ -259,22 +280,22 @@
             width: 40px;
             height: 2px;
             background: linear-gradient(90deg, var(--accent), transparent);
-            margin: 60px auto;
+            margin: 50px auto;
         }
 
         .contact {
             background: var(--primary);
             color: white;
-            padding: 60px 40px;
+            padding: 50px 32px;
             border-radius: 16px;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 60px;
         }
 
         .contact h2 {
             color: white;
             margin-bottom: 16px;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 600;
         }
 
@@ -299,37 +320,41 @@
         .footer {
             background: var(--text);
             color: white;
-            padding: 60px 0 32px;
-            margin-top: 100px;
+            padding: 40px 0 24px;
+            margin-top: 80px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         .footer-brand h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
+            font-size: 22px;
+            margin-bottom: 12px;
         }
 
         .footer-brand p {
             opacity: 0.8;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .footer-links h4 {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .footer-links ul {
             list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
         }
 
         .footer-links a {
@@ -345,64 +370,197 @@
 
         .footer-bottom {
             text-align: center;
-            padding-top: 32px;
+            padding-top: 24px;
             border-top: 1px solid #374151;
             opacity: 0.6;
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 100px 24px 60px;
+            }
+            
             .ethics-title {
                 font-size: 42px;
             }
-
+            
             .ethics-intro {
                 font-size: 20px;
             }
+        }
 
-            .section h2 {
-                font-size: 28px;
-            }
-
-            .section p {
-                font-size: 16px;
-            }
-
-            .section li {
-                font-size: 16px;
-            }
-
+        @media (max-width: 768px) {
             .container {
-                padding: 120px 20px 80px;
+                padding: 90px 16px 60px;
             }
 
-            .standards-card, .community-card, .realworld-card, .matters-card, .commitment-box {
-                padding: 30px 24px;
+            /* Header Mobile */
+            .nav {
+                padding: 10px 16px;
+            }
+
+            .logo-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 24px;
+            }
+
+            .tagline-nav {
+                left: 60px;
+                bottom: -5px;
+                font-size: 9px;
             }
 
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(254, 252, 248, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 0;
+                text-align: center;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            /* Content Mobile */
+            .ethics-title {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+
+            .ethics-intro {
+                font-size: 18px;
+            }
+
+            .ethics-header {
+                margin-bottom: 50px;
+            }
+
+            .section {
+                margin-bottom: 50px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .section p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .section li {
+                font-size: 16px;
+                margin-bottom: 14px;
+                padding-left: 24px;
+            }
+
+            .section li:before {
+                font-size: 13px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .back-link {
+                margin-bottom: 40px;
+            }
+
+            .contact {
+                padding: 40px 20px;
+                margin-top: 50px;
+            }
+
+            .contact h2 {
+                font-size: 22px;
+                margin-bottom: 14px;
+            }
+
+            .contact p, .contact a {
+                font-size: 16px;
+            }
+
+            /* Footer Mobile */
+            .footer {
+                padding: 30px 0 20px;
+                margin-top: 60px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 20px;
+                padding: 0 16px;
             }
 
-            .contact {
-                padding: 40px 24px;
+            .footer-brand h3 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ethics-title {
+                font-size: 28px;
+            }
+
+            .ethics-intro {
+                font-size: 16px;
+            }
+
+            .section h2 {
+                font-size: 22px;
+            }
+
+            .section p {
+                font-size: 15px;
+            }
+
+            .section li {
+                font-size: 15px;
             }
 
             .contact h2 {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .contact p, .contact a {
-                font-size: 16px;
+                font-size: 15px;
             }
         }
     </style>
@@ -440,13 +598,18 @@
                 <a href="index.html" class="logo-text">Scatto</a>
                 <div class="tagline-nav">mindful stories</div>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="gallery/">Gallery</a></li>
                 <li><a href="manifesto.html">Our Manifesto</a></li>
                 <li><a href="ethics.html" class="active">Our Ethics</a></li>
                 <li><a href="photographers/">Our Photographers</a></li>
                 <li><a href="#plans">Plans</a></li>
             </ul>
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -518,7 +681,7 @@
             <div class="contact">
                 <h2>Questions or Concerns?</h2>
                 <p>We're committed to transparency and continuous improvement.</p>
-                <p>Reach us at: <a href="mailto:hello@scatto.photos">ethics@scatto.photos</a></p>
+                <p>Reach us at: <a href="mailto:hello@scatto.photos">hello@scatto.photos</a></p>
             </div>
         </div>
     </div>
@@ -554,5 +717,29 @@
             <p>&copy; 2025 Scatto. Human storytelling for lasting impact.</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('.nav');
+            const navLinks = document.getElementById('navLinks');
+            if (!nav.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

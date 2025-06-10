@@ -7,9 +7,158 @@
             try {
                 const response = await fetch('gallery/photos.json');
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    console.log('JSON file not found, using fallback data');
+                    // Use the complete 13-photo collection as fallback
+                    photoData = [
+                        {
+                            "id": "francesco1",
+                            "title": "Dunes",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0003.jpg",
+                            "alt": "Sunrise over sand dunes in Sossusvlei, Namib Desert, Namibia",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Sossusvlei, Namibia",
+                            "category": "Environment & Sustainability",
+                            "license": "Standard License",
+                            "description": "Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world's most surreal landscapes."
+                        },
+                        {
+                            "id": "ottavia4",
+                            "title": "Afternoon Walk",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/human-impact.jpg",
+                            "alt": "A person walks along a rural road in Iringa, Tanzania",
+                            "photographer": "Ottavia Brussino",
+                            "location": "Iringa, Tanzania",
+                            "category": "Community Engagement",
+                            "license": "Standard License",
+                            "description": "A person walks along a rural road in Iringa, Tanzania, captured in afternoon light."
+                        },
+                        {
+                            "id": "francesco8",
+                            "title": "Sisters",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_4.jpg",
+                            "alt": "Sisters in Odaiba, Tokyo, Japan",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Tokyo, Japan",
+                            "category": "Community Engagement",
+                            "license": "Standard License",
+                            "description": "This spot in Odaiba is for me a space of nostalgia and memories. The island has become a place to go back to every time I'm in the city and reflect on my steps, my goals and directions in life. The special atmosphere of the bay is something that stays with me in my daily life."
+                        },
+                        {
+                            "id": "ottavia1",
+                            "title": "Hazrati Imam Complex",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/uzbekistan1.jpg",
+                            "alt": "Hazrati Imam Complex at sunset, Tashkent, Uzbekistan",
+                            "photographer": "Ottavia Brussino",
+                            "location": "Tashkent, Uzbekistan",
+                            "category": "Culture & Heritage",
+                            "license": "Standard License",
+                            "description": "The Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual and architectural heart of Uzbekistan's capital city. This sacred space represents centuries of Islamic scholarship and cultural heritage."
+                        },
+                        {
+                            "id": "francesco2",
+                            "title": "At the Top",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg",
+                            "alt": "Person climbing Big Daddy sand dune in Sossusvlei, Namibia",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Sossusvlei, Namibia",
+                            "category": "Environment & Sustainability",
+                            "license": "Standard License",
+                            "description": "Climbing Big Daddy dune in Sossusvlei, Namibia. The difficult ascent is rewarded with sweeping views over a sea of sand stretching to the horizon, and the exciting descent into the surreal salt pan of Deadvlei below."
+                        },
+                        {
+                            "id": "ottavia5",
+                            "title": "Rural Connections",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/ruraltanzania2.jpg",
+                            "alt": "People travel by bicycle and on foot along rural roads in Iringa, Tanzania",
+                            "photographer": "Ottavia Brussino",
+                            "location": "Iringa, Tanzania",
+                            "category": "Community Engagement",
+                            "license": "Standard License",
+                            "description": "People travel by bicycle and on foot along rural roads connecting communities in Iringa, Tanzania."
+                        },
+                        {
+                            "id": "francesco3",
+                            "title": "Daily life at Golden Gai",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/BW_2.jpg",
+                            "alt": "Narrow alley in Golden Gai, Shinjuku, Tokyo, Japan",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Tokyo, Japan",
+                            "category": "Culture & Heritage",
+                            "license": "Standard License",
+                            "description": "Narrow alley in Golden Gai, Shinjuku, capturing one of the many quiet lines that form in this iconic nightlife district. This photo reflects the timeless, unchanging rhythm of the neighborhood, unchanged from my first visit years before this shot."
+                        },
+                        {
+                            "id": "ottavia2",
+                            "title": "Namib Desert Dunes at Sunrise",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg",
+                            "alt": "Golden sand dunes of Namib Desert at sunrise",
+                            "photographer": "Ottavia Brussino",
+                            "location": "Namib Desert, Namibia",
+                            "category": "Environment & Sustainability",
+                            "license": "Standard License",
+                            "description": "Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems and the natural beauty of southern Africa."
+                        },
+                        {
+                            "id": "francesco5",
+                            "title": "Walk on the beach",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_1.jpg",
+                            "alt": "Evening walk on the shores of Naoshima, Japan",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Naoshima, Japan",
+                            "category": "Culture & Heritage",
+                            "license": "Standard License",
+                            "description": "Evening walk on the shores of Naoshima, Japan. After a day immersed in contemporary art and architecture, the beach becomes a quiet landing place. The sound of the waves, the setting sun, and the slow pace of visitors add a poetic closure to the day on the island."
+                        },
+                        {
+                            "id": "ottavia3",
+                            "title": "In Transit",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/ruraltanzania.JPG",
+                            "alt": "Local transport on rural roads in Iringa, Tanzania",
+                            "photographer": "Ottavia Brussino",
+                            "location": "Iringa, Tanzania",
+                            "category": "Community Engagement",
+                            "license": "Standard License",
+                            "description": "Local transport on rural roads connecting agricultural communities in Iringa, Tanzania."
+                        },
+                        {
+                            "id": "francesco6",
+                            "title": "Kyoto view",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_2.jpg",
+                            "alt": "Framed view of Kyoto from Kiyomizu-dera Temple",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Kiyomizu-dera Temple, Kyoto",
+                            "category": "Culture & Heritage",
+                            "license": "Standard License",
+                            "description": "Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline."
+                        },
+                        {
+                            "id": "francesco4",
+                            "title": "Akiba, Morning",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/BW_1.jpg",
+                            "alt": "Geometries in Akihabara Station, Tokyo, Japan",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Tokyo, Japan",
+                            "category": "Urban Life",
+                            "license": "Standard License",
+                            "description": "Geometries in Akihabara Station, Tokyo, capturing the clean lines of the subway and the subtle human presence that animates the space. The photo reflects the calm and order that naturally fill many everyday spaces in Japan."
+                        },
+                        {
+                            "id": "francesco7",
+                            "title": "Tokyo bridge",
+                            "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_3.jpg",
+                            "alt": "View of Tokyo skyline from Odaiba",
+                            "photographer": "Francesco Cavagnino",
+                            "location": "Tokyo, Japan",
+                            "category": "Urban Life",
+                            "license": "Standard License",
+                            "description": "View of the skyline of Tokyo from a panoramic spot in Odaiba, the artificial island in the city bay."
+                        }
+                    ];
+                    loadPhotos();
+                    return;
                 }
                 photoData = await response.json();
+                console.log(`Loaded ${photoData.length} photos from JSON`);
                 loadPhotos(); // Load photos into the grid
             } catch (error) {
                 console.error('Error loading photos:', error);

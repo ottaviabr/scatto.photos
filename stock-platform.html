@@ -1,77 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- HEAD CONTENT UNCHANGED -->
-  <!-- ... Keep your existing <head> exactly as is ... -->
-</head>
-<body>
-  <!-- HEADER UNCHANGED -->
-
-  <!-- Main Content -->
-  <main class="main">
-    <!-- Search Section -->
-    <!-- ... Keep your search section unchanged ... -->
-
-    <!-- Results -->
-    <section class="container">
-      <div class="results-header">
-        <div class="results-info">
-          Showing <strong>12</strong> results
-        </div>
-        <div class="view-toggle">
-          <button class="view-btn active">Grid</button>
-          <button class="view-btn">List</button>
-        </div>
-      </div>
-
-      <!-- Photo Grid (Dynamic Load) -->
-      <div class="photo-grid" id="photo-grid"></div>
-
-      <!-- Pagination -->
-      <div class="pagination">
-        <a href="#" class="page-btn active">1</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- MODALS + FOOTER (UNCHANGED) -->
-  <!-- ... Keep your modal and interest form HTML untouched ... -->
-
-  <!-- Existing Scripts -->
-  <!-- Replace photo-card HTML above with dynamic fetch below -->
-  <script>
-    fetch('photos.json')
-      .then(response => response.json())
-      .then(data => {
-        const grid = document.getElementById('photo-grid');
-        data.forEach(photo => {
-          const card = document.createElement('div');
-          card.className = 'photo-card';
-          card.onclick = () => openModal(photo.id);
-          card.innerHTML = `
-            <div class="photo-image">
-              <img src="${photo.src}" alt="${photo.alt}" oncontextmenu="return false" ondragstart="return false">
-              <div class="photo-price">Coming Soon</div>
-              <div class="photo-credit">${photo.photographer}</div>
+<script>
+  fetch('photos.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('✅ Loaded photo data:', data.length, data.map(p => p.id));
+      if (data.length < 12) alert('🛑 Only ' + data.length + ' photos loaded!');
+      const grid = document.getElementById('photo-grid');
+      data.forEach(photo => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.onclick = () => openModal(photo.id);
+        card.innerHTML = `
+          <div class="photo-image">
+            <img src="${photo.src}" alt="${photo.alt}" oncontextmenu="return false" ondragstart="return false">
+            <div class="photo-price">Coming Soon</div>
+            <div class="photo-credit">${photo.photographer}</div>
+          </div>
+          <div class="photo-info">
+            <h3 class="photo-title">${photo.title}</h3>
+            <div class="photo-meta">
+              <span class="photo-location">${photo.location}</span>
+              <span class="photo-category">${photo.category}</span>
             </div>
-            <div class="photo-info">
-              <h3 class="photo-title">${photo.title}</h3>
-              <div class="photo-meta">
-                <span class="photo-location">${photo.location}</span>
-                <span class="photo-category">${photo.category}</span>
-              </div>
-              <p class="photo-description">${photo.description}</p>
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-      })
-      .catch(err => {
-        document.getElementById('photo-grid').innerHTML = '<p>Failed to load gallery.</p>';
-        console.error(err);
+            <p class="photo-description">${photo.description}</p>
+          </div>
+        `;
+        grid.appendChild(card);
       });
-  </script>
-
-  <!-- Keep other scripts like modal open/close logic as-is -->
-</body>
-</html>
+    })
+    .catch(err => {
+      document.getElementById('photo-grid').innerHTML = '<p>Failed to load gallery.</p>';
+      console.error(err);
+    });
+</script>

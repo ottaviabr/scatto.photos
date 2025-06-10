@@ -1,0 +1,62 @@
+[
+  {
+    "id": "francesco1",
+    "title": "Dunes",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0003.jpg",
+    "alt": "Sunrise over sand dunes in Sossusvlei, Namib Desert, Namibia",
+    "photographer": "Francesco Cavagnino",
+    "location": "Sossusvlei, Namibia",
+    "category": "Environment",
+    "description": "Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world's most surreal landscapes."
+  },
+  {
+    "id": "photo1",
+    "title": "Hazrati Imam Complex, Uzbekistan",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1.jpg",
+    "alt": "Hazrati Imam Complex, Uzbekistan",
+    "photographer": "Ottavia Brussino",
+    "location": "Tashkent, Uzbekistan",
+    "category": "Culture",
+    "description": "Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual heart of Uzbekistan's capital."
+  },
+  {
+    "id": "francesco2",
+    "title": "At the Top",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg",
+    "alt": "Person climbing Big Daddy sand dune in Sossusvlei, Namibia",
+    "photographer": "Francesco Cavagnino",
+    "location": "Sossusvlei, Namibia",
+    "category": "Environment",
+    "description": "Climbing Big Daddy dune in Sossusvlei, Namibia. The difficult ascent is rewarded with sweeping views over a sea of sand stretching to the horizon, and the exciting descent into the surreal salt pan of Deadvlei below."
+  },
+  {
+    "id": "francesco10",
+    "title": "Kyoto View",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_2.jpg",
+    "alt": "Traditional view of Kyoto city from Kiyomizu-dera Temple, Japan",
+    "photographer": "Francesco Cavagnino",
+    "location": "Kiyomizu-dera Temple, Kyoto",
+    "category": "Culture",
+    "description": "Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline."
+  },
+  {
+    "id": "photo2",
+    "title": "Namib Desert Dunes at Sunrise",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg",
+    "alt": "Namib Desert Dunes at Sunrise",
+    "photographer": "Ottavia Brussino",
+    "location": "Namib Desert, Namibia",
+    "category": "Environment",
+    "description": "Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems."
+  },
+  {
+    "id": "photo3",
+    "title": "Rural Road Life, Tanzania",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg",
+    "alt": "Rural Road Life, Tanzania",
+    "photographer": "Ottavia Brussino",
+    "location": "Iringa, Tanzania",
+    "category": "Community",
+    "description": "Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility."
+  }
+]

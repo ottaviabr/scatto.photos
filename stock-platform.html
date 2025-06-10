@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scatto Stock - Browse Authentic Photography</title>
+    <title>Scatto Gallery - Browse Authentic Photography</title>
     <meta name="description" content="Browse our collection of ethically-sourced photography for impact organizations.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -32,7 +32,7 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         /* Header */
@@ -50,27 +50,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
+            padding: 12px 0;
+            min-height: 70px;
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             position: relative;
         }
 
         .logo-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
         }
 
         .logo-text {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 1px;
@@ -84,19 +86,19 @@
 
         .tagline {
             position: absolute;
-            left: 85px;
-            bottom: -8px;
+            left: 70px;
+            bottom: -6px;
             color: var(--accent);
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 300;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: lowercase;
             font-family: 'Inter', sans-serif;
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             list-style: none;
         }
 
@@ -138,6 +140,23 @@
             width: 100%;
         }
 
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
         /* Main Content */
         .main {
             padding-top: 100px;
@@ -148,36 +167,36 @@
         .search-section {
             background: white;
             border-bottom: 1px solid var(--border);
-            padding: 40px 0;
-            margin-bottom: 40px;
+            padding: 30px 0;
+            margin-bottom: 30px;
         }
 
         .search-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .search-header h1 {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 600;
             color: var(--primary);
             margin-bottom: 12px;
         }
 
         .search-header p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-light);
         }
 
         .search-bar {
             position: relative;
             max-width: 600px;
-            margin: 0 auto 32px;
+            margin: 0 auto 24px;
         }
 
         .search-input {
             width: 100%;
-            padding: 16px 50px 16px 20px;
+            padding: 14px 50px 14px 18px;
             border: 2px solid var(--border);
             border-radius: 12px;
             font-size: 16px;
@@ -204,7 +223,7 @@
 
         .filters {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -214,7 +233,7 @@
         }
 
         .filter-select {
-            padding: 12px 40px 12px 16px;
+            padding: 12px 35px 12px 14px;
             border: 2px solid var(--border);
             border-radius: 8px;
             background: white;
@@ -223,7 +242,7 @@
             color: var(--text);
             cursor: pointer;
             appearance: none;
-            min-width: 160px;
+            min-width: 140px;
         }
 
         .filter-select:focus {
@@ -247,7 +266,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .results-info {
@@ -266,6 +285,8 @@
             background: white;
             cursor: pointer;
             transition: all 0.3s;
+            border-radius: 6px;
+            font-size: 14px;
         }
 
         .view-btn.active {
@@ -278,8 +299,8 @@
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 60px;
+            gap: 20px;
+            margin-bottom: 50px;
         }
 
         .photo-card {
@@ -299,7 +320,7 @@
         .photo-image {
             position: relative;
             width: 100%;
-            height: 240px;
+            height: 220px;
             overflow: hidden;
         }
 
@@ -321,8 +342,8 @@
 
         .photo-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 10px;
+            left: 10px;
             background: rgba(26, 35, 50, 0.8);
             color: white;
             padding: 4px 8px;
@@ -333,8 +354,8 @@
 
         .photo-price {
             position: absolute;
-            top: 12px;
-            right: 12px;
+            top: 10px;
+            right: 10px;
             background: rgba(26, 35, 50, 0.8);
             color: white;
             padding: 6px 10px;
@@ -374,7 +395,7 @@
         }
 
         .photo-info {
-            padding: 20px;
+            padding: 18px;
         }
 
         .photo-title {
@@ -389,7 +410,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .photo-location {
@@ -411,7 +432,7 @@
             font-size: 14px;
             color: var(--text-light);
             line-height: 1.5;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .photo-actions {
@@ -420,7 +441,7 @@
         }
 
         .btn-small {
-            padding: 8px 16px;
+            padding: 8px 14px;
             font-size: 13px;
             font-weight: 600;
             border-radius: 6px;
@@ -428,6 +449,7 @@
             cursor: pointer;
             transition: all 0.3s;
             flex: 1;
+            text-align: center;
         }
 
         .btn-add-cart {
@@ -462,6 +484,7 @@
             align-items: center;
             justify-content: center;
             z-index: 1000;
+            padding: 20px;
         }
 
         .modal.active {
@@ -475,6 +498,7 @@
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
+            width: 100%;
         }
 
         .modal-close {
@@ -494,7 +518,7 @@
 
         .modal-image {
             width: 100%;
-            height: 400px;
+            height: 350px;
             object-fit: cover;
             position: relative;
         }
@@ -516,11 +540,11 @@
         }
 
         .modal-info {
-            padding: 32px;
+            padding: 24px;
         }
 
         .modal-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 16px;
@@ -528,10 +552,10 @@
 
         .modal-meta {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+            padding: 18px;
             background: var(--secondary);
             border-radius: 8px;
         }
@@ -554,14 +578,14 @@
             font-size: 16px;
             line-height: 1.6;
             color: var(--text);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .license-info {
             background: #F5E6D3;
-            padding: 20px;
+            padding: 18px;
             border-radius: 8px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .license-info h4 {
@@ -577,11 +601,11 @@
 
         .modal-actions {
             display: flex;
-            gap: 16px;
+            gap: 12px;
         }
 
         .btn-large {
-            padding: 16px 32px;
+            padding: 14px 24px;
             font-size: 16px;
             font-weight: 700;
             border-radius: 8px;
@@ -589,6 +613,7 @@
             cursor: pointer;
             transition: all 0.3s;
             flex: 1;
+            text-align: center;
         }
 
         /* Interest Form Modal */
@@ -596,41 +621,42 @@
             background: white;
             border-radius: 16px;
             max-width: 500px;
-            padding: 40px;
+            padding: 30px;
             position: relative;
+            width: 100%;
         }
 
         .interest-form h3 {
             color: var(--primary);
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             text-align: center;
         }
 
         .interest-form p {
             color: var(--text-light);
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             line-height: 1.6;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
             color: var(--text);
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 12px 14px;
             border: 2px solid var(--border);
             border-radius: 8px;
             font-size: 14px;
@@ -645,13 +671,13 @@
         }
 
         .form-group textarea {
-            height: 100px;
+            height: 80px;
             resize: vertical;
         }
 
         .form-submit {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             background: var(--primary);
             color: white;
             border: none;
@@ -668,17 +694,17 @@
 
         .form-success {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 15px;
         }
 
         .form-success h3 {
             color: var(--primary);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .form-success p {
             color: var(--text-light);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         /* Pagination */
@@ -686,7 +712,7 @@
             display: flex;
             justify-content: center;
             gap: 8px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .page-btn {
@@ -715,37 +741,41 @@
         .footer {
             background: var(--text);
             color: white;
-            padding: 60px 0 32px;
-            margin-top: 100px;
+            padding: 40px 0 24px;
+            margin-top: 60px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         .footer-brand h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
+            font-size: 22px;
+            margin-bottom: 12px;
         }
 
         .footer-brand p {
             opacity: 0.8;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .footer-links h4 {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .footer-links ul {
             list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
         }
 
         .footer-links a {
@@ -761,57 +791,223 @@
 
         .footer-bottom {
             text-align: center;
-            padding-top: 32px;
+            padding-top: 24px;
             border-top: 1px solid #374151;
             opacity: 0.6;
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
-        /* Responsive */
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 24px;
+            }
+            
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            /* Header Mobile */
+            .nav {
+                padding: 10px 16px;
+            }
+
+            .logo-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 24px;
+            }
+
+            .tagline {
+                left: 60px;
+                bottom: -5px;
+                font-size: 9px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(254, 252, 248, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 0;
+                text-align: center;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            /* Search Section Mobile */
+            .search-section {
+                padding: 20px 0;
+            }
+
             .search-header h1 {
-                font-size: 28px;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .search-header p {
+                font-size: 15px;
+            }
+
+            .search-bar {
+                margin-bottom: 20px;
             }
 
             .filters {
                 flex-direction: column;
                 align-items: center;
+                gap: 12px;
             }
 
             .filter-select {
-                min-width: 200px;
+                min-width: 240px;
+                width: 100%;
+                max-width: 300px;
             }
 
+            /* Photo Grid Mobile */
             .photo-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 gap: 16px;
             }
 
+            .photo-image {
+                height: 200px;
+            }
+
+            .photo-info {
+                padding: 16px;
+            }
+
             .results-header {
                 flex-direction: column;
-                gap: 16px;
+                gap: 12px;
                 align-items: flex-start;
             }
 
+            /* Modal Mobile */
+            .modal {
+                padding: 10px;
+            }
+
             .modal-content {
-                margin: 20px;
-                max-width: calc(100% - 40px);
+                margin: 0;
+                max-width: 100%;
+                max-height: 95vh;
+            }
+
+            .modal-image {
+                height: 250px;
+            }
+
+            .modal-info {
+                padding: 20px;
+            }
+
+            .modal-title {
+                font-size: 20px;
+            }
+
+            .modal-meta {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 16px;
             }
 
             .modal-actions {
                 flex-direction: column;
+                gap: 10px;
             }
 
-            .nav-links {
-                display: none;
+            .watermark-overlay {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            /* Interest Form Mobile */
+            .interest-form {
+                padding: 24px;
+                margin: 10px;
+            }
+
+            .interest-form h3 {
+                font-size: 20px;
+            }
+
+            /* Footer Mobile */
+            .footer {
+                padding: 30px 0 20px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 20px;
+                padding: 0 16px;
+            }
+
+            .footer-brand h3 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-header h1 {
+                font-size: 22px;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-image {
+                height: 180px;
+            }
+
+            .modal-image {
+                height: 200px;
+            }
+
+            .interest-form {
+                padding: 20px;
             }
         }
     </style>
@@ -846,16 +1042,21 @@
                         <circle cx="16.5" cy="11.2" r="0.25" fill="#FEFCF8" opacity="0.5"/>
                     </g>
                 </svg>
-                <a href="index.html" class="logo-text">Scatto</a>
+                <a href="../index.html" class="logo-text">Scatto</a>
                 <div class="tagline">mindful stories</div>
             </div>
-            <ul class="nav-links">
-                <li><a href="gallery/" class="active">Gallery</a></li>
-                <li><a href="manifesto.html">Our Manifesto</a></li>
-                <li><a href="ethics.html">Our Ethics</a></li>
-                <li><a href="photographers/">Our Photographers</a></li>
-                <li><a href="#plans">Plans</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../gallery/index.html" class="active">Gallery</a></li>
+                <li><a href="../manifesto.html">Our Manifesto</a></li>
+                <li><a href="../ethics.html">Our Ethics</a></li>
+                <li><a href="../photographers/index.html">Our Photographers</a></li>
+                <li><a href="../index.html#plans">Plans</a></li>
             </ul>
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -923,6 +1124,7 @@
                             <option value="india">India</option>
                             <option value="peru">Peru</option>
                             <option value="bangladesh">Bangladesh</option>
+                            <option value="japan">Japan</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -941,7 +1143,7 @@
         <section class="container">
             <div class="results-header">
                 <div class="results-info">
-                    Showing <strong>3</strong> results
+                    Showing <strong>4</strong> results
                 </div>
                 <div class="view-toggle">
                     <button class="view-btn active">Grid</button>
@@ -951,11 +1153,33 @@
 
             <!-- Photo Grid -->
             <div class="photo-grid" id="photo-grid">
+                <!-- Francesco - Image 1: Dunes -->
+                <div class="photo-card" onclick="openModal('francesco1')">
+                    <div class="photo-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0003.jpg" alt="Sunrise over sand dunes in Sossusvlei, Namib Desert, Namibia" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Francesco Cavagnino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Dunes</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Sossusvlei, Namibia</span>
+                            <span class="photo-category">Environment</span>
+                        </div>
+                        <p class="photo-description">Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world's most surreal landscapes.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('francesco1')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('francesco1')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ottavia - Hazrati Imam Complex -->
                 <div class="photo-card" onclick="openModal('photo1')">
                     <div class="photo-image">
                         <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1" alt="Hazrati Imam Complex, Uzbekistan" oncontextmenu="return false" ondragstart="return false">
                         <div class="photo-badge">EXCLUSIVE</div>
-                        <div class="photo-price">$12</div>
+                        <div class="photo-price">Coming Soon</div>
                         <div class="photo-credit">Ottavia Brussino</div>
                     </div>
                     <div class="photo-info">
@@ -972,42 +1196,44 @@
                     </div>
                 </div>
 
-                <div class="photo-card" onclick="openModal('photo2')">
+                <!-- Francesco - Image 2: At the Top -->
+                <div class="photo-card" onclick="openModal('francesco2')">
                     <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg" alt="Namib Desert Dunes at Sunrise" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$10</div>
-                        <div class="photo-credit">Ottavia Brussino</div>
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg" alt="Person climbing Big Daddy sand dune in Sossusvlei, Namibia" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Francesco Cavagnino</div>
                     </div>
                     <div class="photo-info">
-                        <h3 class="photo-title">Namib Desert Dunes at Sunrise</h3>
+                        <h3 class="photo-title">At the Top</h3>
                         <div class="photo-meta">
-                            <span class="photo-location">Namib Desert, Namibia</span>
+                            <span class="photo-location">Sossusvlei, Namibia</span>
                             <span class="photo-category">Environment</span>
                         </div>
-                        <p class="photo-description">Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems.</p>
+                        <p class="photo-description">Climbing Big Daddy dune in Sossusvlei, Namibia. The difficult ascent is rewarded with sweeping views over a sea of sand stretching to the horizon, and the exciting descent into the surreal salt pan of Deadvlei below.</p>
                         <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo2')">Express Interest</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">View Details</button>
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('francesco2')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('francesco2')">View Details</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="photo-card" onclick="openModal('photo3')">
+                <!-- Francesco - Image 10: Kyoto view -->
+                <div class="photo-card" onclick="openModal('francesco10')">
                     <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg" alt="Rural Road Life, Tanzania" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$11</div>
-                        <div class="photo-credit">Ottavia Brussino</div>
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_2.jpg" alt="Traditional view of Kyoto city from Kiyomizu-dera Temple, Japan" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Francesco Cavagnino</div>
                     </div>
                     <div class="photo-info">
-                        <h3 class="photo-title">Rural Road Life, Tanzania</h3>
+                        <h3 class="photo-title">Kyoto View</h3>
                         <div class="photo-meta">
-                            <span class="photo-location">Iringa, Tanzania</span>
-                            <span class="photo-category">Community</span>
+                            <span class="photo-location">Kiyomizu-dera Temple, Kyoto</span>
+                            <span class="photo-category">Culture</span>
                         </div>
-                        <p class="photo-description">Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility.</p>
+                        <p class="photo-description">Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline.</p>
                         <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo3')">Express Interest</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">View Details</button>
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('francesco10')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('francesco10')">View Details</button>
                         </div>
                     </div>
                 </div>
@@ -1104,39 +1330,59 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Scatto</h3>
-                    <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="gallery/">Gallery</a></li>
-                        <li><a href="manifesto.html">Our Manifesto</a></li>
-                        <li><a href="ethics.html">Our Ethics</a></li>
-                        <li><a href="photographers/">Our Photographers</a></li>
-                        <li><a href="#plans">Plans</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Join Us</h4>
-                    <ul>
-                        <li><a href="photographers/">For Photographers</a></li>
-                        <li><a href="#">For Organizations</a></li>
-                        <li><a href="#">Get Early Access</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Scatto</h3>
+                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Scatto. Human storytelling for lasting impact.</p>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="../gallery/index.html">Gallery</a></li>
+                    <li><a href="../manifesto.html">Our Manifesto</a></li>
+                    <li><a href="../ethics.html">Our Ethics</a></li>
+                    <li><a href="../photographers/index.html">Our Photographers</a></li>
+                    <li><a href="../index.html#plans">Plans</a></li>
+                </ul>
             </div>
+            <div class="footer-links">
+                <h4>Join Us</h4>
+                <ul>
+                    <li><a href="../photographers/index.html">For Photographers</a></li>
+                    <li><a href="../index.html">For Organizations</a></li>
+                    <li><a href="../index.html">Get Early Access</a></li>
+                    <li><a href="../index.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Scatto. Human storytelling for lasting impact.</p>
         </div>
     </footer>
 
     <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('.nav');
+            const navLinks = document.getElementById('navLinks');
+            if (!nav.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
         // Modal functionality
         function openModal(photoId) {
             const modal = document.getElementById('photoModal');
@@ -1150,6 +1396,33 @@
 
             // Photo data
             const photos = {
+                'francesco1': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0003.jpg',
+                    title: 'Dunes',
+                    location: 'Sossusvlei, Namibia',
+                    category: 'Environment & Sustainability',
+                    photographer: 'Francesco Cavagnino',
+                    license: 'TBD',
+                    description: 'Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world\'s most surreal landscapes. This ancient desert showcases the raw beauty of southern Africa\'s natural heritage.'
+                },
+                'francesco2': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg',
+                    title: 'At the Top',
+                    location: 'Sossusvlei, Namibia',
+                    category: 'Environment & Sustainability',
+                    photographer: 'Francesco Cavagnino',
+                    license: 'TBD',
+                    description: 'Climbing Big Daddy dune in Sossusvlei, Namibia. The difficult ascent is rewarded with sweeping views over a sea of sand stretching to the horizon, and the exciting descent into the surreal salt pan of Deadvlei below. A testament to human adventure in one of Earth\'s most challenging landscapes.'
+                },
+                'francesco10': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_2.jpg',
+                    title: 'Kyoto View',
+                    location: 'Kiyomizu-dera Temple, Kyoto',
+                    category: 'Culture & Heritage',
+                    photographer: 'Francesco Cavagnino',
+                    license: 'TBD',
+                    description: 'Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline. A perfect blend of Japan\'s rich cultural heritage and contemporary urban development.'
+                },
                 'photo1': {
                     src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1',
                     title: 'Hazrati Imam Complex, Uzbekistan',
@@ -1158,24 +1431,6 @@
                     photographer: 'Ottavia Brussino',
                     license: 'Standard License',
                     description: 'The Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual and architectural heart of Uzbekistan\'s capital city. This sacred space represents centuries of Islamic scholarship and cultural heritage.'
-                },
-                'photo2': {
-                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg',
-                    title: 'Namib Desert Dunes at Sunrise',
-                    location: 'Namib Desert, Namibia',
-                    category: 'Environment & Sustainability',
-                    photographer: 'Ottavia Brussino',
-                    license: 'Standard License',
-                    description: 'Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world\'s oldest desert ecosystems and the natural beauty of southern Africa.'
-                },
-                'photo3': {
-                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg',
-                    title: 'Rural Road Life, Tanzania',
-                    location: 'Iringa, Tanzania',
-                    category: 'Community Engagement',
-                    photographer: 'Ottavia Brussino',
-                    license: 'Standard License',
-                    description: 'Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility patterns in East Africa.'
                 }
             };
 
@@ -1219,7 +1474,7 @@
             const photographer = urlParams.get('photographer');
             
             if (photographer) {
-                // Convert URL parameter back to readable name (ottavia-brussino -> ottavia brussino)
+                // Convert URL parameter back to readable name (francesco-cavagnino -> francesco cavagnino)
                 const photographerName = photographer.replace('-', ' ');
                 
                 // Hide photos not by this photographer

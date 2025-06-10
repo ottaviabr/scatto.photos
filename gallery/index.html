@@ -1,4 +1,202 @@
-<div class="results-header">
+<script>
+        // Photo data will be loaded from JSON file
+        let photoData = [];
+
+        // Function to load photos from JSON file
+        async function loadPhotosFromJSON() {
+            try {
+                const response = await fetch('gallery/photos.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                photoData = await response.json();
+                loadPhotos(); // Load photos into the grid
+            } catch (error) {
+                console.error('Error loading photos:', error);
+                // Fallback to show a message if JSON fails to load
+                document.getElementById('photo-grid').innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+                        <p style="color: var(--text-light);">Unable to load photos. Please check that photos.json is available.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Function to create photo card HTML
+        function createPhotoCard(photo) {
+            const categoryShort = photo.category.split(' ')[0]; // Get first word for display
+            const descriptionShort = photo.description.length > 120 ? 
+                photo.description.substring(0, 120) + '...' : photo.description;
+            
+            return `
+                <div class="photo-card" onclick="openModal('${photo.id}')">
+                    <div class="photo-image">
+                        <img src="${photo.src}" alt="${photo.alt}" oncontextmenu="return false" ondragstart="return false">
+                        ${photo.id === 'ottavia1' ? '<div class="photo-badge">FEATURED</div>' : ''}
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">${photo.photographer}</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">${photo.title}</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">${photo.location}</span>
+                            <span class="photo-category">${categoryShort}</span>
+                        </div>
+                        <p class="photo-description">${descriptionShort}</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('${photo.id}')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('${photo.id}')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to load photos into the grid
+        function loadPhotos() {
+            const photoGrid = document.getElementById('photo-grid');
+            const photoCount = document.getElementById('photo-count');
+            
+            // Generate HTML for all photos
+            const photosHTML = photoData.map(photo => createPhotoCard(photo)).join('');
+            
+            // Insert into grid
+            photoGrid.innerHTML = photosHTML;
+            
+            // Update count
+            photoCount.textContent = photoData.length;
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('.nav');
+            const navLinks = document.getElementById('navLinks');
+            if (!nav.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Modal functionality
+        function openModal(photoId) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalLocation = document.getElementById('modalLocation');
+            const modalCategory = document.getElementById('modalCategory');
+            const modalPhotographer = document.getElementById('modalPhotographer');
+            const modalLicense = document.getElementById('modalLicense');
+            const modalDescription = document.getElementById('modalDescription');
+
+            // Find photo by ID
+            const photo = photoData.find(p => p.id === photoId);
+            
+            if (photo) {
+                modalImage.src = photo.src;
+                modalImage.alt = photo.title;
+                modalTitle.textContent = photo.title;
+                modalLocation.textContent = photo.location;
+                modalCategory.textContent = photo.category;
+                modalPhotographer.textContent = photo.photographer;
+                modalLicense.textContent = photo.license;
+                modalDescription.textContent = photo.description;
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').classList.remove('active');
+        }
+
+        function expressInterest(photoId = null) {
+            closeModal();
+            document.getElementById('interestModal').classList.add('active');
+        }
+
+        function closeInterestForm() {
+            document.getElementById('interestModal').classList.remove('active');
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Photographer filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load photos from JSON first
+            loadPhotosFromJSON();
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const photographer = urlParams.get('photographer');
+            
+            if (photographer) {
+                // Wait a bit for photos to load, then filter
+                setTimeout(() => {
+                    // Convert URL parameter back to readable name (francesco-cavagnino -> francesco cavagnino)
+                    const photographerName = photographer.replace('-', ' ');
+                    
+                    // Hide photos not by this photographer
+                    const photoCards = document.querySelectorAll('.photo-card');
+                    let visiblePhotos = 0;
+                    
+                    photoCards.forEach(card => {
+                        const credit = card.querySelector('.photo-credit');
+                        if (credit && credit.textContent.toLowerCase().includes(photographerName.toLowerCase())) {
+                            // Show this photo
+                            card.style.display = 'block';
+                            visiblePhotos++;
+                        } else {
+                            // Hide this photo
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update results count
+                    const resultsInfo = document.querySelector('#photo-count');
+                    if (resultsInfo) {
+                        resultsInfo.textContent = visiblePhotos;
+                    }
+                    
+                    // Update page title to show filtered view
+                    const searchHeader = document.querySelector('.search-header h1');
+                    if (searchHeader) {
+                        const capitalizedName = photographerName.split(' ').map(word => 
+                            word.charAt(0).toUpperCase() + word.slice(1)
+                        ).join(' ');
+                        searchHeader.textContent = `Photos by ${capitalizedName}`;
+                    }
+                }, 500); // Wait 500ms for photos to load
+            }
+        });
+
+        // Form submission
+        document.getElementById('interestFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Show success message
+            document.querySelector('.interest-form').innerHTML = `
+                <div class="form-success">
+                    <h3>Thanks for your interest!</h3>
+                    <p>We'll notify you when Scatto launches and this photo becomes available.</p>
+                    <button onclick="closeInterestForm()" class="form-submit">Continue Browsing</button>
+                </div>
+            `;
+        });
+    </script>            <div class="results-header">
                 <div class="results-info">
                     Showing <strong id="photo-count">0</strong> results
                 </div>

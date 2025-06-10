@@ -58,5 +58,65 @@
     "location": "Iringa, Tanzania",
     "category": "Community",
     "description": "Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility."
+  },
+  {
+    "id": "photo4",
+    "title": "Lake Eyasi Family",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/people1.jpg",
+    "alt": "Portrait of Hadzabe family near Lake Eyasi, Tanzania",
+    "photographer": "Ottavia Brussino",
+    "location": "Lake Eyasi, Tanzania",
+    "category": "People",
+    "description": "A Hadzabe family shares a quiet moment by their shelter near Lake Eyasi, reflecting resilience and simplicity in Tanzania’s hunter-gatherer communities."
+  },
+  {
+    "id": "photo5",
+    "title": "Bukhara Bazaar",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/people2.jpg",
+    "alt": "Women shopping in Bukhara market, Uzbekistan",
+    "photographer": "Ottavia Brussino",
+    "location": "Bukhara, Uzbekistan",
+    "category": "Culture",
+    "description": "Women gather at a textile stall in Bukhara's old bazaar, surrounded by vibrant colors and tradition that echo Silk Road history."
+  },
+  {
+    "id": "photo6",
+    "title": "Sardinia Grazing",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural2.jpg",
+    "alt": "Goats grazing near a hilltop in Sardinia, Italy",
+    "photographer": "Ottavia Brussino",
+    "location": "Sardinia, Italy",
+    "category": "Rural Life",
+    "description": "A peaceful pastoral scene of goats grazing on rocky hills under Mediterranean skies in Sardinia’s rugged countryside."
+  },
+  {
+    "id": "photo7",
+    "title": "Tunis Street Life",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/urban1.jpg",
+    "alt": "Boy riding a bike in the medina of Tunis",
+    "photographer": "Ottavia Brussino",
+    "location": "Tunis, Tunisia",
+    "category": "Urban",
+    "description": "A young boy glides through a narrow alley in the Tunis medina, merging play with the rhythms of North African city life."
+  },
+  {
+    "id": "photo8",
+    "title": "Bukhara Doorways",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/architecture1.jpg",
+    "alt": "Colorful doors in Bukhara, Uzbekistan",
+    "photographer": "Ottavia Brussino",
+    "location": "Bukhara, Uzbekistan",
+    "category": "Architecture",
+    "description": "Old wooden doors painted in pastel hues line a street in Bukhara, each marking a unique story from Uzbekistan’s architectural heritage."
+  },
+  {
+    "id": "photo9",
+    "title": "Sunset Walk, Tashkent",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/urban2.jpg",
+    "alt": "Couple walking in the sunset in Tashkent",
+    "photographer": "Ottavia Brussino",
+    "location": "Tashkent, Uzbekistan",
+    "category": "Urban",
+    "description": "A couple strolls through a sunlit square in Tashkent, a modern moment surrounded by Soviet-era geometry and soft evening light."
   }
 ]

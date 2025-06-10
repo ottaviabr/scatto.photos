@@ -10,16 +10,6 @@
     "description": "Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world's most surreal landscapes."
   },
   {
-    "id": "photo1",
-    "title": "Hazrati Imam Complex, Uzbekistan",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1.jpg",
-    "alt": "Hazrati Imam Complex, Uzbekistan",
-    "photographer": "Ottavia Brussino",
-    "location": "Tashkent, Uzbekistan",
-    "category": "Culture",
-    "description": "Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual heart of Uzbekistan's capital."
-  },
-  {
     "id": "francesco2",
     "title": "At the Top",
     "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg",
@@ -38,6 +28,16 @@
     "location": "Kiyomizu-dera Temple, Kyoto",
     "category": "Culture",
     "description": "Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline."
+  },
+  {
+    "id": "photo1",
+    "title": "Hazrati Imam Complex, Uzbekistan",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1.jpg",
+    "alt": "Hazrati Imam Complex, Uzbekistan",
+    "photographer": "Ottavia Brussino",
+    "location": "Tashkent, Uzbekistan",
+    "category": "Culture",
+    "description": "Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual heart of Uzbekistan's capital."
   },
   {
     "id": "photo2",

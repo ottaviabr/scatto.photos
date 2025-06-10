@@ -1,34 +1,76 @@
-<script>
-  fetch('photos.json')
-    .then(response => response.json())
-    .then(data => {
-      console.log('✅ Loaded photo data:', data.length, data.map(p => p.id));
-      if (data.length < 12) alert('🛑 Only ' + data.length + ' photos loaded!');
-      const grid = document.getElementById('photo-grid');
-      data.forEach(photo => {
-        const card = document.createElement('div');
-        card.className = 'photo-card';
-        card.onclick = () => openModal(photo.id);
-        card.innerHTML = `
-          <div class="photo-image">
-            <img src="${photo.src}" alt="${photo.alt}" oncontextmenu="return false" ondragstart="return false">
-            <div class="photo-price">Coming Soon</div>
-            <div class="photo-credit">${photo.photographer}</div>
-          </div>
-          <div class="photo-info">
-            <h3 class="photo-title">${photo.title}</h3>
-            <div class="photo-meta">
-              <span class="photo-location">${photo.location}</span>
-              <span class="photo-category">${photo.category}</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scatto Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Scatto Photo Gallery</h1>
+  </header>
+
+  <main class="main">
+    <section class="container">
+      <div class="results-header">
+        <div class="results-info">
+          Showing <strong>12</strong> results
+        </div>
+        <div class="view-toggle">
+          <button class="view-btn active">Grid</button>
+          <button class="view-btn">List</button>
+        </div>
+      </div>
+
+      <!-- Photo Grid -->
+      <div class="photo-grid" id="photo-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Scatto. All rights reserved.</p>
+  </footer>
+
+  <script>
+    fetch('photos.json')
+      .then(response => {
+        if (!response.ok) throw new Error('photos.json not found');
+        return response.json();
+      })
+      .then(data => {
+        console.log('✅ Loaded photo data:', data.length);
+        const grid = document.getElementById('photo-grid');
+        data.forEach(photo => {
+          const card = document.createElement('div');
+          card.className = 'photo-card';
+          card.onclick = function () {
+            if (typeof openModal === 'function') {
+              openModal(photo.id);
+            }
+          };
+          card.innerHTML = `
+            <div class="photo-image">
+              <img src="${photo.src}" alt="${photo.alt}" oncontextmenu="return false" ondragstart="return false">
+              <div class="photo-price">Coming Soon</div>
+              <div class="photo-credit">${photo.photographer}</div>
             </div>
-            <p class="photo-description">${photo.description}</p>
-          </div>
-        `;
-        grid.appendChild(card);
+            <div class="photo-info">
+              <h3 class="photo-title">${photo.title}</h3>
+              <div class="photo-meta">
+                <span class="photo-location">${photo.location}</span>
+                <span class="photo-category">${photo.category}</span>
+              </div>
+              <p class="photo-description">${photo.description}</p>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('🛑 Gallery load failed:', error);
+        document.getElementById('photo-grid').innerHTML = '<p style="color: red;">Failed to load gallery. Please check photos.json and script.</p>';
       });
-    })
-    .catch(err => {
-      document.getElementById('photo-grid').innerHTML = '<p>Failed to load gallery.</p>';
-      console.error(err);
-    });
-</script>
+  </script>
+</body>
+</html>

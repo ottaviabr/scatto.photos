@@ -11,6 +11,39 @@
     "description": "Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world's most surreal landscapes."
   },
   {
+    "id": "ottavia4",
+    "title": "Afternoon Walk",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/human-impact.jpg",
+    "alt": "A person walks along a rural road in Iringa, Tanzania",
+    "photographer": "Ottavia Brussino",
+    "location": "Iringa, Tanzania",
+    "category": "Community Engagement",
+    "license": "Standard License",
+    "description": "A person walks along a rural road in Iringa, Tanzania, captured in afternoon light."
+  },
+  {
+    "id": "francesco8",
+    "title": "Sisters",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_4.jpg",
+    "alt": "Sisters in Odaiba, Tokyo, Japan",
+    "photographer": "Francesco Cavagnino",
+    "location": "Tokyo, Japan",
+    "category": "Community Engagement",
+    "license": "Standard License",
+    "description": "This spot in Odaiba is for me a space of nostalgia and memories. The island has become a place to go back to every time I'm in the city and reflect on my steps, my goals and directions in life. The special atmosphere of the bay is something that stays with me in my daily life."
+  },
+  {
+    "id": "ottavia1",
+    "title": "Hazrati Imam Complex",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/uzbekistan1.jpg",
+    "alt": "Hazrati Imam Complex at sunset, Tashkent, Uzbekistan",
+    "photographer": "Ottavia Brussino",
+    "location": "Tashkent, Uzbekistan",
+    "category": "Culture & Heritage",
+    "license": "Standard License",
+    "description": "The Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual and architectural heart of Uzbekistan's capital city. This sacred space represents centuries of Islamic scholarship and cultural heritage."
+  },
+  {
     "id": "francesco2",
     "title": "At the Top",
     "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg",
@@ -20,6 +53,17 @@
     "category": "Environment & Sustainability",
     "license": "Standard License",
     "description": "Climbing Big Daddy dune in Sossusvlei, Namibia. The difficult ascent is rewarded with sweeping views over a sea of sand stretching to the horizon, and the exciting descent into the surreal salt pan of Deadvlei below."
+  },
+  {
+    "id": "ottavia5",
+    "title": "Rural Connections",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/ruraltanzania2.jpg",
+    "alt": "People travel by bicycle and on foot along rural roads in Iringa, Tanzania",
+    "photographer": "Ottavia Brussino",
+    "location": "Iringa, Tanzania",
+    "category": "Community Engagement",
+    "license": "Standard License",
+    "description": "People travel by bicycle and on foot along rural roads connecting communities in Iringa, Tanzania."
   },
   {
     "id": "francesco3",
@@ -33,50 +77,6 @@
     "description": "Narrow alley in Golden Gai, Shinjuku, capturing one of the many quiet lines that form in this iconic nightlife district. This photo reflects the timeless, unchanging rhythm of the neighborhood, unchanged from my first visit years before this shot."
   },
   {
-    "id": "francesco4",
-    "title": "Akiba, Morning",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/BW_1.jpg",
-    "alt": "Geometries in Akihabara Station, Tokyo, Japan",
-    "photographer": "Francesco Cavagnino",
-    "location": "Tokyo, Japan",
-    "category": "Urban Life",
-    "license": "Standard License",
-    "description": "Geometries in Akihabara Station, Tokyo, capturing the clean lines of the subway and the subtle human presence that animates the space. The photo reflects the calm and order that naturally fill many everyday spaces in Japan."
-  },
-  {
-    "id": "francesco5",
-    "title": "Desert Solitude",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0001.jpg",
-    "alt": "Lone tree in Deadvlei, Sossusvlei, Namibia",
-    "photographer": "Francesco Cavagnino",
-    "location": "Deadvlei, Sossusvlei, Namibia",
-    "category": "Environment & Sustainability",
-    "license": "Standard License",
-    "description": "Ancient camel thorn trees stand as silent sentinels in Deadvlei, their 900-year-old forms preserved by the desert's arid conditions, creating a haunting testament to endurance."
-  },
-  {
-    "id": "francesco6",
-    "title": "Namibian Vastness",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0002.jpg",
-    "alt": "Expansive view of Namibian desert landscape",
-    "photographer": "Francesco Cavagnino",
-    "location": "Sossusvlei, Namibia",
-    "category": "Environment & Sustainability",
-    "license": "Standard License",
-    "description": "The endless expanse of the Namib Desert stretches toward distant mountains, showcasing one of Earth's most ancient and pristine wilderness areas."
-  },
-  {
-    "id": "ottavia1",
-    "title": "Hazrati Imam Complex",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/authentic-voices.jpg",
-    "alt": "Hazrati Imam Complex at sunset, Tashkent, Uzbekistan",
-    "photographer": "Ottavia Brussino",
-    "location": "Tashkent, Uzbekistan",
-    "category": "Culture & Heritage",
-    "license": "Standard License",
-    "description": "The Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual and architectural heart of Uzbekistan's capital city. This sacred space represents centuries of Islamic scholarship and cultural heritage."
-  },
-  {
     "id": "ottavia2",
     "title": "Namib Desert Dunes at Sunrise",
     "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg",
@@ -86,6 +86,17 @@
     "category": "Environment & Sustainability",
     "license": "Standard License",
     "description": "Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems and the natural beauty of southern Africa."
+  },
+  {
+    "id": "francesco5",
+    "title": "Walk on the beach",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_1.jpg",
+    "alt": "Evening walk on the shores of Naoshima, Japan",
+    "photographer": "Francesco Cavagnino",
+    "location": "Naoshima, Japan",
+    "category": "Culture & Heritage",
+    "license": "Standard License",
+    "description": "Evening walk on the shores of Naoshima, Japan. After a day immersed in contemporary art and architecture, the beach becomes a quiet landing place. The sound of the waves, the setting sun, and the slow pace of visitors add a poetic closure to the day on the island."
   },
   {
     "id": "ottavia3",
@@ -99,36 +110,36 @@
     "description": "Local transport on rural roads connecting agricultural communities in Iringa, Tanzania."
   },
   {
-    "id": "ottavia4",
-    "title": "Bukhara Architecture",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/architecture1.jpg",
-    "alt": "Traditional architecture and doorways in Bukhara, Uzbekistan",
-    "photographer": "Ottavia Brussino",
-    "location": "Bukhara, Uzbekistan",
+    "id": "francesco6",
+    "title": "Kyoto view",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_2.jpg",
+    "alt": "Framed view of Kyoto from Kiyomizu-dera Temple",
+    "photographer": "Francesco Cavagnino",
+    "location": "Kiyomizu-dera Temple, Kyoto",
     "category": "Culture & Heritage",
     "license": "Standard License",
-    "description": "Traditional wooden doors and architectural details in Bukhara's historic quarter, showcasing the intricate craftsmanship and cultural heritage of ancient Uzbekistan."
+    "description": "Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline."
   },
   {
-    "id": "ottavia5",
-    "title": "Bukhara Market Life",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/people2.jpg",
-    "alt": "Women shopping in traditional Bukhara market, Uzbekistan",
-    "photographer": "Ottavia Brussino",
-    "location": "Bukhara, Uzbekistan",
-    "category": "Culture & Heritage",
+    "id": "francesco4",
+    "title": "Akiba, Morning",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/BW_1.jpg",
+    "alt": "Geometries in Akihabara Station, Tokyo, Japan",
+    "photographer": "Francesco Cavagnino",
+    "location": "Tokyo, Japan",
+    "category": "Urban Life",
     "license": "Standard License",
-    "description": "Women gather at a textile stall in Bukhara's historic bazaar, surrounded by vibrant colors and traditions that echo the ancient Silk Road heritage."
+    "description": "Geometries in Akihabara Station, Tokyo, capturing the clean lines of the subway and the subtle human presence that animates the space. The photo reflects the calm and order that naturally fill many everyday spaces in Japan."
   },
   {
-    "id": "ottavia6",
-    "title": "Tashkent Evening",
-    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/urban2.jpg",
-    "alt": "Evening scene in Tashkent, Uzbekistan",
-    "photographer": "Ottavia Brussino",
-    "location": "Tashkent, Uzbekistan",
-    "category": "Community Engagement",
+    "id": "francesco7",
+    "title": "Tokyo bridge",
+    "src": "https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_3.jpg",
+    "alt": "View of Tokyo skyline from Odaiba",
+    "photographer": "Francesco Cavagnino",
+    "location": "Tokyo, Japan",
+    "category": "Urban Life",
     "license": "Standard License",
-    "description": "Evening light captures daily life in Tashkent, showcasing the blend of Soviet-era architecture and modern Uzbek urban culture in the capital city."
+    "description": "View of the skyline of Tokyo from a panoramic spot in Odaiba, the artificial island in the city bay."
   }
 ]

@@ -1124,6 +1124,7 @@
                             <option value="india">India</option>
                             <option value="peru">Peru</option>
                             <option value="bangladesh">Bangladesh</option>
+                            <option value="japan">Japan</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -1142,7 +1143,7 @@
         <section class="container">
             <div class="results-header">
                 <div class="results-info">
-                    Showing <strong>3</strong> results
+                    Showing <strong>4</strong> results
                 </div>
                 <div class="view-toggle">
                     <button class="view-btn active">Grid</button>
@@ -1152,11 +1153,33 @@
 
             <!-- Photo Grid -->
             <div class="photo-grid" id="photo-grid">
+                <!-- Francesco - Image 1: Dunes -->
+                <div class="photo-card" onclick="openModal('francesco1')">
+                    <div class="photo-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0003.jpg" alt="Sunrise over sand dunes in Sossusvlei, Namib Desert, Namibia" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Francesco Cavagnino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Dunes</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Sossusvlei, Namibia</span>
+                            <span class="photo-category">Environment</span>
+                        </div>
+                        <p class="photo-description">Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world's most surreal landscapes.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('francesco1')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('francesco1')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ottavia - Hazrati Imam Complex -->
                 <div class="photo-card" onclick="openModal('photo1')">
                     <div class="photo-image">
                         <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1" alt="Hazrati Imam Complex, Uzbekistan" oncontextmenu="return false" ondragstart="return false">
                         <div class="photo-badge">EXCLUSIVE</div>
-                        <div class="photo-price">$12</div>
+                        <div class="photo-price">Coming Soon</div>
                         <div class="photo-credit">Ottavia Brussino</div>
                     </div>
                     <div class="photo-info">
@@ -1173,42 +1196,44 @@
                     </div>
                 </div>
 
-                <div class="photo-card" onclick="openModal('photo2')">
+                <!-- Francesco - Image 2: At the Top -->
+                <div class="photo-card" onclick="openModal('francesco2')">
                     <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg" alt="Namib Desert Dunes at Sunrise" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$10</div>
-                        <div class="photo-credit">Ottavia Brussino</div>
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg" alt="Person climbing Big Daddy sand dune in Sossusvlei, Namibia" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Francesco Cavagnino</div>
                     </div>
                     <div class="photo-info">
-                        <h3 class="photo-title">Namib Desert Dunes at Sunrise</h3>
+                        <h3 class="photo-title">At the Top</h3>
                         <div class="photo-meta">
-                            <span class="photo-location">Namib Desert, Namibia</span>
+                            <span class="photo-location">Sossusvlei, Namibia</span>
                             <span class="photo-category">Environment</span>
                         </div>
-                        <p class="photo-description">Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems.</p>
+                        <p class="photo-description">Climbing Big Daddy dune in Sossusvlei, Namibia. The difficult ascent is rewarded with sweeping views over a sea of sand stretching to the horizon, and the exciting descent into the surreal salt pan of Deadvlei below.</p>
                         <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo2')">Express Interest</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">View Details</button>
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('francesco2')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('francesco2')">View Details</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="photo-card" onclick="openModal('photo3')">
+                <!-- Francesco - Image 10: Kyoto view -->
+                <div class="photo-card" onclick="openModal('francesco10')">
                     <div class="photo-image">
-                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg" alt="Rural Road Life, Tanzania" oncontextmenu="return false" ondragstart="return false">
-                        <div class="photo-price">$11</div>
-                        <div class="photo-credit">Ottavia Brussino</div>
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_2.jpg" alt="Traditional view of Kyoto city from Kiyomizu-dera Temple, Japan" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Francesco Cavagnino</div>
                     </div>
                     <div class="photo-info">
-                        <h3 class="photo-title">Rural Road Life, Tanzania</h3>
+                        <h3 class="photo-title">Kyoto View</h3>
                         <div class="photo-meta">
-                            <span class="photo-location">Iringa, Tanzania</span>
-                            <span class="photo-category">Community</span>
+                            <span class="photo-location">Kiyomizu-dera Temple, Kyoto</span>
+                            <span class="photo-category">Culture</span>
                         </div>
-                        <p class="photo-description">Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility.</p>
+                        <p class="photo-description">Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline.</p>
                         <div class="photo-actions">
-                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo3')">Express Interest</button>
-                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">View Details</button>
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('francesco10')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('francesco10')">View Details</button>
                         </div>
                     </div>
                 </div>
@@ -1305,35 +1330,33 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Scatto</h3>
-                    <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="../gallery/index.html">Gallery</a></li>
-                        <li><a href="../manifesto.html">Our Manifesto</a></li>
-                        <li><a href="../ethics.html">Our Ethics</a></li>
-                        <li><a href="../photographers/index.html">Our Photographers</a></li>
-                        <li><a href="../index.html#plans">Plans</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Join Us</h4>
-                    <ul>
-                        <li><a href="../photographers/index.html">For Photographers</a></li>
-                        <li><a href="../index.html">For Organizations</a></li>
-                        <li><a href="../index.html">Get Early Access</a></li>
-                        <li><a href="../index.html">Contact</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Scatto</h3>
+                <p>Keeping human stories at the heart of impact communications, one authentic photograph at a time.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Scatto. Human storytelling for lasting impact.</p>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="../gallery/index.html">Gallery</a></li>
+                    <li><a href="../manifesto.html">Our Manifesto</a></li>
+                    <li><a href="../ethics.html">Our Ethics</a></li>
+                    <li><a href="../photographers/index.html">Our Photographers</a></li>
+                    <li><a href="../index.html#plans">Plans</a></li>
+                </ul>
             </div>
+            <div class="footer-links">
+                <h4>Join Us</h4>
+                <ul>
+                    <li><a href="../photographers/index.html">For Photographers</a></li>
+                    <li><a href="../index.html">For Organizations</a></li>
+                    <li><a href="../index.html">Get Early Access</a></li>
+                    <li><a href="../index.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Scatto. Human storytelling for lasting impact.</p>
         </div>
     </footer>
 
@@ -1373,6 +1396,33 @@
 
             // Photo data
             const photos = {
+                'francesco1': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0003.jpg',
+                    title: 'Dunes',
+                    location: 'Sossusvlei, Namibia',
+                    category: 'Environment & Sustainability',
+                    photographer: 'Francesco Cavagnino',
+                    license: 'TBD',
+                    description: 'Sunrise over the dunes of Sossusvlei, Namibia. The soft light reveals the sculpted landscape of the Namib Desert, capturing the quiet magic of one of the world\'s most surreal landscapes. This ancient desert showcases the raw beauty of southern Africa\'s natural heritage.'
+                },
+                'francesco2': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/Sussusvlei0005.jpg',
+                    title: 'At the Top',
+                    location: 'Sossusvlei, Namibia',
+                    category: 'Environment & Sustainability',
+                    photographer: 'Francesco Cavagnino',
+                    license: 'TBD',
+                    description: 'Climbing Big Daddy dune in Sossusvlei, Namibia. The difficult ascent is rewarded with sweeping views over a sea of sand stretching to the horizon, and the exciting descent into the surreal salt pan of Deadvlei below. A testament to human adventure in one of Earth\'s most challenging landscapes.'
+                },
+                'francesco10': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/JAP_2.jpg',
+                    title: 'Kyoto View',
+                    location: 'Kiyomizu-dera Temple, Kyoto',
+                    category: 'Culture & Heritage',
+                    photographer: 'Francesco Cavagnino',
+                    license: 'TBD',
+                    description: 'Framed view of Kyoto from Kiyomizu-dera. The traditional architecture of the temple embraces the cityscape below, creating a striking contrast between the ancient structure and the modern skyline. A perfect blend of Japan\'s rich cultural heritage and contemporary urban development.'
+                },
                 'photo1': {
                     src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/culture1',
                     title: 'Hazrati Imam Complex, Uzbekistan',
@@ -1381,24 +1431,6 @@
                     photographer: 'Ottavia Brussino',
                     license: 'Standard License',
                     description: 'The Hazrati Imam Complex in Tashkent at sunset, capturing the spiritual and architectural heart of Uzbekistan\'s capital city. This sacred space represents centuries of Islamic scholarship and cultural heritage.'
-                },
-                'photo2': {
-                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg',
-                    title: 'Namib Desert Dunes at Sunrise',
-                    location: 'Namib Desert, Namibia',
-                    category: 'Environment & Sustainability',
-                    photographer: 'Ottavia Brussino',
-                    license: 'Standard License',
-                    description: 'Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world\'s oldest desert ecosystems and the natural beauty of southern Africa.'
-                },
-                'photo3': {
-                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg',
-                    title: 'Rural Road Life, Tanzania',
-                    location: 'Iringa, Tanzania',
-                    category: 'Community Engagement',
-                    photographer: 'Ottavia Brussino',
-                    license: 'Standard License',
-                    description: 'Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility patterns in East Africa.'
                 }
             };
 
@@ -1442,7 +1474,7 @@
             const photographer = urlParams.get('photographer');
             
             if (photographer) {
-                // Convert URL parameter back to readable name (ottavia-brussino -> ottavia brussino)
+                // Convert URL parameter back to readable name (francesco-cavagnino -> francesco cavagnino)
                 const photographerName = photographer.replace('-', ' ');
                 
                 // Hide photos not by this photographer

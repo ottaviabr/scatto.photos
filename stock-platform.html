@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+'photo2': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg',
+                    title: 'Namib Desert Dunes at Sunrise',
+                    location: 'Namib Desert, Namibia',
+                    category: 'Environment & Sustainability',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world\'s oldest desert ecosystems and the natural beauty of southern Africa.'
+                },
+                'photo3': {
+                    src: 'https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg',
+                    title: 'Rural Road Life, Tanzania',
+                    location: 'Iringa, Tanzania',
+                    category: 'Community Engagement',
+                    photographer: 'Ottavia Brussino',
+                    license: 'Standard License',
+                    description: 'Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility patterns in East Africa.'
+                },<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1143,7 +1160,7 @@
         <section class="container">
             <div class="results-header">
                 <div class="results-info">
-                    Showing <strong>4</strong> results
+                    Showing <strong>6</strong> results
                 </div>
                 <div class="view-toggle">
                     <button class="view-btn active">Grid</button>
@@ -1234,6 +1251,48 @@
                         <div class="photo-actions">
                             <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('francesco10')">Express Interest</button>
                             <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('francesco10')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ottavia - Namib Desert -->
+                <div class="photo-card" onclick="openModal('photo2')">
+                    <div class="photo-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/environment2.jpg" alt="Namib Desert Dunes at Sunrise" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Namib Desert Dunes at Sunrise</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Namib Desert, Namibia</span>
+                            <span class="photo-category">Environment</span>
+                        </div>
+                        <p class="photo-description">Golden sand dunes of the Namib Desert captured at sunrise, showcasing one of the world's oldest desert ecosystems.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo2')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo2')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ottavia - Rural Road Tanzania -->
+                <div class="photo-card" onclick="openModal('photo3')">
+                    <div class="photo-image">
+                        <img src="https://raw.githubusercontent.com/ottaviabr/scatto.photos/main/photos/rural1.jpg" alt="Rural Road Life, Tanzania" oncontextmenu="return false" ondragstart="return false">
+                        <div class="photo-price">Coming Soon</div>
+                        <div class="photo-credit">Ottavia Brussino</div>
+                    </div>
+                    <div class="photo-info">
+                        <h3 class="photo-title">Rural Road Life, Tanzania</h3>
+                        <div class="photo-meta">
+                            <span class="photo-location">Iringa, Tanzania</span>
+                            <span class="photo-category">Community</span>
+                        </div>
+                        <p class="photo-description">Daily life on a rural road in Iringa, Tanzania, capturing authentic community transportation and local mobility.</p>
+                        <div class="photo-actions">
+                            <button class="btn-small btn-add-cart" onclick="event.stopPropagation(); expressInterest('photo3')">Express Interest</button>
+                            <button class="btn-small btn-preview" onclick="event.stopPropagation(); openModal('photo3')">View Details</button>
                         </div>
                     </div>
                 </div>
